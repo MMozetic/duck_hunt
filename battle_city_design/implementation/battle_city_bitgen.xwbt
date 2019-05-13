@@ -1,7 +1,7 @@
-INFILE=C:\materija\RA46-2015\projekat_v1\duck_hunt\battle_city_design\implementation\battle_city.ncd
-OUTFILE=C:\materija\RA46-2015\projekat_v1\duck_hunt\battle_city_design\implementation\battle_city.bit
+INFILE=D:\ra207-2016\duck_hunt\battle_city_design\implementation\battle_city.ncd
+OUTFILE=D:\ra207-2016\duck_hunt\battle_city_design\implementation\battle_city.bit
 FAMILY=Spartan6
 PART=xc6slx45-2fgg676
-WORKINGDIR=C:\materija\RA46-2015\projekat_v1\duck_hunt\battle_city_design\implementation
+WORKINGDIR=D:\ra207-2016\duck_hunt\battle_city_design\implementation
 LICENSE=ISE
-USER_INFO=209858334_178080923_210593072_268
+USER_INFO=209858334_178080923_210593072_769

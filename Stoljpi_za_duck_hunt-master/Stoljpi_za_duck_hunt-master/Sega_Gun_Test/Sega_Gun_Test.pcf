@@ -1,0 +1,13 @@
+//! **************************************************************************
+// Written by: Map P.68d on Mon May 13 10:16:13 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "o_pwr" LOCATE = SITE "C5" LEVEL 1;
+COMP "i_sw<0>" LOCATE = SITE "W19" LEVEL 1;
+COMP "i_sig" LOCATE = SITE "C6" LEVEL 1;
+COMP "in_btn<0>" LOCATE = SITE "AA23" LEVEL 1;
+COMP "o_led<0>" LOCATE = SITE "N24" LEVEL 1;
+COMP "o_led<1>" LOCATE = SITE "N23" LEVEL 1;
+SCHEMATIC END;
+

@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Users/student/Downloads/Stoljpi_za_duck_hunt-master/Stoljpi_za_duck_hunt-master/Sega_Gun_Test/Sega_Gun_Test.xst" -ofn "C:/Users/student/Downloads/Stoljpi_za_duck_hunt-master/Stoljpi_za_duck_hunt-master/Sega_Gun_Test/Sega_Gun_Test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/boards/E2LP.ucf -p xc6slx45-fgg676-2 Sega_Gun_Test.ngc Sega_Gun_Test.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Sega_Gun_Test_map.ncd Sega_Gun_Test.ngd Sega_Gun_Test.pcf 
+par -w -intstyle ise -ol high -mt off Sega_Gun_Test_map.ncd Sega_Gun_Test.ncd Sega_Gun_Test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Sega_Gun_Test.twx Sega_Gun_Test.ncd -o Sega_Gun_Test.twr Sega_Gun_Test.pcf 
+bitgen -intstyle ise -f Sega_Gun_Test.ut Sega_Gun_Test.ncd 

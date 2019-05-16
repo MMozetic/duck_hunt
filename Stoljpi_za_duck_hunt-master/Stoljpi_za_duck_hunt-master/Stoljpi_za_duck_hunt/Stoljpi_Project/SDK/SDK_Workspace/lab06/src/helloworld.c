@@ -161,7 +161,12 @@ int main()
 
     	sig = stoljpi();
     	if(!sig){
-    		score++;
+    		if(score<9){
+    			score++;
+    		}else{
+    			score = 0;
+    		}
+
     	}
 
     	i++;

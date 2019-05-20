@@ -24,7 +24,9 @@ entity battle_city_stub is
     battle_city_periph_0_red_o_pin : out std_logic_vector(7 downto 0);
     battle_city_periph_0_green_o_pin : out std_logic_vector(7 downto 0);
     battle_city_periph_0_blue_o_pin : out std_logic_vector(7 downto 0);
-    io_periph_GPIO_IO_I_pin : in std_logic_vector(4 downto 0)
+    io_periph_GPIO_IO_I_pin : in std_logic_vector(4 downto 0);
+    battle_city_periph_0_DIP_Data_pin : in std_logic_vector(7 downto 0);
+    battle_city_periph_0_LED_Data_pin : out std_logic_vector(7 downto 0)
   );
 end battle_city_stub;
 
@@ -47,7 +49,9 @@ architecture STRUCTURE of battle_city_stub is
       battle_city_periph_0_red_o_pin : out std_logic_vector(7 downto 0);
       battle_city_periph_0_green_o_pin : out std_logic_vector(7 downto 0);
       battle_city_periph_0_blue_o_pin : out std_logic_vector(7 downto 0);
-      io_periph_GPIO_IO_I_pin : in std_logic_vector(4 downto 0)
+      io_periph_GPIO_IO_I_pin : in std_logic_vector(4 downto 0);
+      battle_city_periph_0_DIP_Data_pin : in std_logic_vector(7 downto 0);
+      battle_city_periph_0_LED_Data_pin : out std_logic_vector(7 downto 0)
     );
   end component;
 
@@ -73,7 +77,9 @@ begin
       battle_city_periph_0_red_o_pin => battle_city_periph_0_red_o_pin,
       battle_city_periph_0_green_o_pin => battle_city_periph_0_green_o_pin,
       battle_city_periph_0_blue_o_pin => battle_city_periph_0_blue_o_pin,
-      io_periph_GPIO_IO_I_pin => io_periph_GPIO_IO_I_pin
+      io_periph_GPIO_IO_I_pin => io_periph_GPIO_IO_I_pin,
+      battle_city_periph_0_DIP_Data_pin => battle_city_periph_0_DIP_Data_pin,
+      battle_city_periph_0_LED_Data_pin => battle_city_periph_0_LED_Data_pin
     );
 
 end architecture STRUCTURE;

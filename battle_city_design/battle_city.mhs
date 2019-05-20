@@ -27,6 +27,8 @@
  PORT battle_city_periph_0_green_o_pin = battle_city_periph_0_green_o, DIR = O, VEC = [7:0]
  PORT battle_city_periph_0_blue_o_pin = battle_city_periph_0_blue_o, DIR = O, VEC = [7:0]
  PORT io_periph_GPIO_IO_I_pin = net_io_periph_GPIO_IO_I_pin, DIR = I, VEC = [4:0]
+ PORT battle_city_periph_0_DIP_Data_pin = net_battle_city_periph_0_DIP_Data_pin, DIR = I, VEC = [7:0]
+ PORT battle_city_periph_0_LED_Data_pin = battle_city_periph_0_LED_Data, DIR = O, VEC = [7:0]
 
 
 BEGIN proc_sys_reset
@@ -156,6 +158,8 @@ BEGIN battle_city_periph
  PORT red_o = battle_city_periph_0_red_o
  PORT green_o = battle_city_periph_0_green_o
  PORT blue_o = battle_city_periph_0_blue_o
+ PORT DIP_Data = net_battle_city_periph_0_DIP_Data_pin
+ PORT LED_Data = battle_city_periph_0_LED_Data
 END
 
 BEGIN axi_gpio

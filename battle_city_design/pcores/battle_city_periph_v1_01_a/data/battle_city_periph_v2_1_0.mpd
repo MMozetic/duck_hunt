@@ -70,4 +70,10 @@ PORT green_o        = "", DIR = O, VEC = [7:0]
 PORT blue_o         = "", DIR = O, VEC = [7:0]
 PORT interrupt_o     = "", DIR = O, SIGIS = INTERRUPT, SENSITIVITY = EDGE_RISING
 
+
+#stoljpi
+
+PORT DIP_Data = "", DIR = I, VEC = [7:0]
+PORT LED_Data = "", DIR = O, VEC = [7:0]
+
 END

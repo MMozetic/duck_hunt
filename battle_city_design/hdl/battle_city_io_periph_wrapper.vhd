@@ -32,9 +32,9 @@ entity battle_city_io_periph_wrapper is
     S_AXI_RVALID : out std_logic;
     S_AXI_RREADY : in std_logic;
     IP2INTC_Irpt : out std_logic;
-    GPIO_IO_I : in std_logic_vector(4 downto 0);
-    GPIO_IO_O : out std_logic_vector(4 downto 0);
-    GPIO_IO_T : out std_logic_vector(4 downto 0);
+    GPIO_IO_I : in std_logic_vector(7 downto 0);
+    GPIO_IO_O : out std_logic_vector(7 downto 0);
+    GPIO_IO_T : out std_logic_vector(7 downto 0);
     GPIO2_IO_I : in std_logic_vector(31 downto 0);
     GPIO2_IO_O : out std_logic_vector(31 downto 0);
     GPIO2_IO_T : out std_logic_vector(31 downto 0)
@@ -100,7 +100,7 @@ begin
       C_FAMILY => "spartan6",
       C_INSTANCE => "io_periph",
       C_S_AXI_DATA_WIDTH => 32,
-      C_GPIO_WIDTH => 5,
+      C_GPIO_WIDTH => 8,
       C_GPIO2_WIDTH => 32,
       C_ALL_INPUTS => 0,
       C_ALL_INPUTS_2 => 0,

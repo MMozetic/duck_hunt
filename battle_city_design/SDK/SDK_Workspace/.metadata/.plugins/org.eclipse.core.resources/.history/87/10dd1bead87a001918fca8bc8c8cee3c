@@ -813,7 +813,7 @@ void battle_city() {
 
 	while (1) {
 		duck_move();
-		draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR+0x4);
+
 	}
 }
 

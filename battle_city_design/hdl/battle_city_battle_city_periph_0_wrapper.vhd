@@ -42,9 +42,7 @@ entity battle_city_battle_city_periph_0_wrapper is
     red_o : out std_logic_vector(7 downto 0);
     green_o : out std_logic_vector(7 downto 0);
     blue_o : out std_logic_vector(7 downto 0);
-    interrupt_o : out std_logic;
-    DIP_Data : in std_logic_vector(7 downto 0);
-    LED_Data : out std_logic_vector(7 downto 0)
+    interrupt_o : out std_logic
   );
 end battle_city_battle_city_periph_0_wrapper;
 
@@ -96,9 +94,7 @@ architecture STRUCTURE of battle_city_battle_city_periph_0_wrapper is
       red_o : out std_logic_vector(7 downto 0);
       green_o : out std_logic_vector(7 downto 0);
       blue_o : out std_logic_vector(7 downto 0);
-      interrupt_o : out std_logic;
-      DIP_Data : in std_logic_vector(7 downto 0);
-      LED_Data : out std_logic_vector(7 downto 0)
+      interrupt_o : out std_logic
     );
   end component;
 
@@ -150,9 +146,7 @@ begin
       red_o => red_o,
       green_o => green_o,
       blue_o => blue_o,
-      interrupt_o => interrupt_o,
-      DIP_Data => DIP_Data,
-      LED_Data => LED_Data
+      interrupt_o => interrupt_o
     );
 
 end architecture STRUCTURE;

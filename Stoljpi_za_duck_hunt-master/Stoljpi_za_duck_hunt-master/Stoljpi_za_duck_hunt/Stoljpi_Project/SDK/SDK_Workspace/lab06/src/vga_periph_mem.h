@@ -39,8 +39,8 @@
  * 	Xuint32 VGA_PERIPH_MEM_mReadMemory(Xuint32 Address)
  *
  */
-#define VGA_PERIPH_MEM_mWriteMemory(Address, Data) \
- 	Xil_Out32(Address, (Xuint32)(Data))
+	#define VGA_PERIPH_MEM_mWriteMemory(Address, Data) \
+		Xil_Out32(Address, (Xuint32)(Data))
 #define VGA_PERIPH_MEM_mReadMemory(Address) \
  	Xil_In32(Address)
 

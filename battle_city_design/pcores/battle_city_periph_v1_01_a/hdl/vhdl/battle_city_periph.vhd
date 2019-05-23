@@ -146,11 +146,6 @@ entity battle_city_periph is
 		
 		interrupt_o		: out std_logic;
 		
-		
-		--dodato zbog stoljpija
-		DIP_Data : in std_logic_vector(7 downto 0);
-      LED_Data : out std_logic_vector(7 downto 0);
-		
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------

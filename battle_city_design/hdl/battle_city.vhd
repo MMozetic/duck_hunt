@@ -24,9 +24,8 @@ entity battle_city is
     battle_city_periph_0_red_o_pin : out std_logic_vector(7 downto 0);
     battle_city_periph_0_green_o_pin : out std_logic_vector(7 downto 0);
     battle_city_periph_0_blue_o_pin : out std_logic_vector(7 downto 0);
-    io_periph_GPIO_IO_I_pin : in std_logic_vector(4 downto 0);
-    battle_city_periph_0_DIP_Data_pin : in std_logic_vector(7 downto 0);
-    battle_city_periph_0_LED_Data_pin : out std_logic_vector(7 downto 0)
+    io_periph_GPIO_IO_I_pin : in std_logic_vector(7 downto 0);
+    io_periph_GPIO_IO_O_pin : out std_logic_vector(7 downto 0)
   );
 end battle_city;
 
@@ -1644,9 +1643,7 @@ architecture STRUCTURE of battle_city is
       red_o : out std_logic_vector(7 downto 0);
       green_o : out std_logic_vector(7 downto 0);
       blue_o : out std_logic_vector(7 downto 0);
-      interrupt_o : out std_logic;
-      DIP_Data : in std_logic_vector(7 downto 0);
-      LED_Data : out std_logic_vector(7 downto 0)
+      interrupt_o : out std_logic
     );
   end component;
 
@@ -1672,9 +1669,9 @@ architecture STRUCTURE of battle_city is
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
       IP2INTC_Irpt : out std_logic;
-      GPIO_IO_I : in std_logic_vector(4 downto 0);
-      GPIO_IO_O : out std_logic_vector(4 downto 0);
-      GPIO_IO_T : out std_logic_vector(4 downto 0);
+      GPIO_IO_I : in std_logic_vector(7 downto 0);
+      GPIO_IO_O : out std_logic_vector(7 downto 0);
+      GPIO_IO_T : out std_logic_vector(7 downto 0);
       GPIO2_IO_I : in std_logic_vector(31 downto 0);
       GPIO2_IO_O : out std_logic_vector(31 downto 0);
       GPIO2_IO_T : out std_logic_vector(31 downto 0)
@@ -1749,7 +1746,6 @@ architecture STRUCTURE of battle_city is
   signal axi4lite_0_S_WREADY : std_logic_vector(0 to 0);
   signal axi4lite_0_S_WSTRB : std_logic_vector(3 downto 0);
   signal axi4lite_0_S_WVALID : std_logic_vector(0 to 0);
-  signal battle_city_periph_0_LED_Data : std_logic_vector(7 downto 0);
   signal battle_city_periph_0_blank_on : std_logic;
   signal battle_city_periph_0_blue_o : std_logic_vector(7 downto 0);
   signal battle_city_periph_0_green_o : std_logic_vector(7 downto 0);
@@ -1760,6 +1756,7 @@ architecture STRUCTURE of battle_city is
   signal battle_city_periph_0_v_sync_on : std_logic;
   signal battle_city_periph_0_vga_clk_o : std_logic;
   signal clk_100_0000MHz : std_logic_vector(0 to 0);
+  signal io_periph_GPIO_IO_O : std_logic_vector(7 downto 0);
   signal microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Addr : std_logic_vector(0 to 31);
   signal microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Clk : std_logic;
   signal microblaze_0_d_bram_ctrl_2_microblaze_0_bram_block_BRAM_Din : std_logic_vector(0 to 31);
@@ -1825,7 +1822,6 @@ architecture STRUCTURE of battle_city is
   signal microblaze_0_ilmb_Sl_Ready : std_logic_vector(0 to 0);
   signal microblaze_0_ilmb_Sl_UE : std_logic_vector(0 to 0);
   signal microblaze_0_ilmb_Sl_Wait : std_logic_vector(0 to 0);
-  signal net_battle_city_periph_0_DIP_Data_pin : std_logic_vector(7 downto 0);
   signal net_battle_city_periph_0_clk_24MHz_i_pin : std_logic;
   signal net_battle_city_periph_0_rst_in_pin : std_logic;
   signal net_gnd0 : std_logic;
@@ -1836,7 +1832,7 @@ architecture STRUCTURE of battle_city is
   signal net_gnd16 : std_logic_vector(0 to 15);
   signal net_gnd32 : std_logic_vector(0 to 31);
   signal net_gnd4096 : std_logic_vector(0 to 4095);
-  signal net_io_periph_GPIO_IO_I_pin : std_logic_vector(4 downto 0);
+  signal net_io_periph_GPIO_IO_I_pin : std_logic_vector(7 downto 0);
   signal net_vcc0 : std_logic;
   signal pgassign1 : std_logic_vector(2 downto 0);
   signal proc_sys_reset_0_BUS_STRUCT_RESET : std_logic_vector(0 to 0);
@@ -1875,8 +1871,7 @@ begin
   battle_city_periph_0_green_o_pin <= battle_city_periph_0_green_o;
   battle_city_periph_0_blue_o_pin <= battle_city_periph_0_blue_o;
   net_io_periph_GPIO_IO_I_pin <= io_periph_GPIO_IO_I_pin;
-  net_battle_city_periph_0_DIP_Data_pin <= battle_city_periph_0_DIP_Data_pin;
-  battle_city_periph_0_LED_Data_pin <= battle_city_periph_0_LED_Data;
+  io_periph_GPIO_IO_O_pin <= io_periph_GPIO_IO_O;
   pgassign1(2 downto 2) <= clk_100_0000MHz(0 to 0);
   pgassign1(1 downto 1) <= clk_100_0000MHz(0 to 0);
   pgassign1(0 downto 0) <= clk_100_0000MHz(0 to 0);
@@ -3492,9 +3487,7 @@ begin
       red_o => battle_city_periph_0_red_o,
       green_o => battle_city_periph_0_green_o,
       blue_o => battle_city_periph_0_blue_o,
-      interrupt_o => open,
-      DIP_Data => net_battle_city_periph_0_DIP_Data_pin,
-      LED_Data => battle_city_periph_0_LED_Data
+      interrupt_o => open
     );
 
   io_periph : battle_city_io_periph_wrapper
@@ -3520,7 +3513,7 @@ begin
       S_AXI_RREADY => axi4lite_0_M_RREADY(2),
       IP2INTC_Irpt => open,
       GPIO_IO_I => net_io_periph_GPIO_IO_I_pin,
-      GPIO_IO_O => open,
+      GPIO_IO_O => io_periph_GPIO_IO_O,
       GPIO_IO_T => open,
       GPIO2_IO_I => net_gnd32(0 to 31),
       GPIO2_IO_O => open,

@@ -11,8 +11,6 @@
  * DATE: Wed Jul 08 21:00:48 2015
  */
 
-// offset za grafiku
-#define GRAPHICS_MEM_OFF 0x2000000
 // ***** 16x16 IMAGES *****
 #define IMG_16x16_bg00			0x00FF
 #define IMG_16x16_bg01			0x013F
@@ -813,7 +811,6 @@ void battle_city() {
 
 	while (1) {
 		duck_move();
-		draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR+0x4);
 	}
 }
 

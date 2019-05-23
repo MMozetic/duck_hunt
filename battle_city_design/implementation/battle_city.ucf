@@ -57,9 +57,21 @@ NET battle_city_periph_0_blue_o_pin(5)         LOC = K18  | IOSTANDARD = LVTTL;
 NET battle_city_periph_0_blue_o_pin(6)         LOC = C19  | IOSTANDARD = LVTTL;
 NET battle_city_periph_0_blue_o_pin(7)         LOC = C20  | IOSTANDARD = LVTTL;
 
-NET io_periph_GPIO_IO_I_pin(0)                 LOC = AC24 | IOSTANDARD = LVTTL;
-NET io_periph_GPIO_IO_I_pin(1)                 LOC = AC23 | IOSTANDARD = LVTTL;
-NET io_periph_GPIO_IO_I_pin(2)                 LOC = AB24 | IOSTANDARD = LVTTL;
-NET io_periph_GPIO_IO_I_pin(3)                 LOC = AA24 | IOSTANDARD = LVTTL;
-NET io_periph_GPIO_IO_I_pin(4)                 LOC = AA23 | IOSTANDARD = LVTTL;
 
+NET io_periph_GPIO_IO_I_pin[0] LOC = "W19"  |  IOSTANDARD = "LVCMOS33"; # i_sw(0)
+NET io_periph_GPIO_IO_I_pin[1] LOC = "AA23"  |  IOSTANDARD = "LVCMOS33"; # BTN_UP, in_btn(0)
+NET io_periph_GPIO_IO_I_pin[2] LOC = "C6"  |  IOSTANDARD = "LVCMOS33"; # SNAPW_1, i_sig
+NET io_periph_GPIO_IO_I_pin[3] LOC = "V24"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_I_pin[4] LOC = "U20"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_I_pin[5] LOC = "U23"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_I_pin[6] LOC = "U24"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_I_pin[7] LOC = "U19"  |  IOSTANDARD = "LVCMOS33";
+
+NET io_periph_GPIO_IO_O_pin[0] LOC = "N24"  |  IOSTANDARD = "LVCMOS33"; # o_led[0] = in_btn(0) and i_sw(0)
+NET io_periph_GPIO_IO_O_pin[1] LOC = "N23"  |  IOSTANDARD = "LVCMOS33"; # o_led[1] = i_sig
+NET io_periph_GPIO_IO_O_pin[2] LOC = "C5"  |  IOSTANDARD = "LVCMOS33"; # SNAPW_0, o_pwr = in_btn(0) and i_sw(0)
+NET io_periph_GPIO_IO_O_pin[3] LOC = "L24"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_O_pin[4] LOC = "L23"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_O_pin[5] LOC = "K24"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_O_pin[6] LOC = "H24"  |  IOSTANDARD = "LVCMOS33";
+NET io_periph_GPIO_IO_O_pin[7] LOC = "D24"  |  IOSTANDARD = "LVCMOS33";

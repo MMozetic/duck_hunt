@@ -129,7 +129,6 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
     Set property "MAX_FANOUT = 10000" for signal <S_AXI_ARESETN>.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
-WARNING:Xst:647 - Input <DIP_Data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_AWADDR<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_WSTRB> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_ARADDR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -138,7 +137,7 @@ WARNING:Xst:647 - Input <rst_in> is never used. This port will be preserved and 
 WARNING:Xst:647 - Input <S_AXI_ARVALID> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <S_AXI_RREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <r_write_response>.
-    Found 30-bit subtractor for signal <local_write_addr> created at line 204.
+    Found 30-bit subtractor for signal <local_write_addr> created at line 199.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 D-type flip-flop(s).
@@ -855,7 +854,7 @@ Slice Logic Distribution:
    Number of unique control sets:         7
 
 IO Utilization: 
- Number of IOs:                         197
+ Number of IOs:                         181
  Number of bonded IOBs:                   0  out of    358     0%  
 
 Specific Feature Utilization:
@@ -1013,14 +1012,14 @@ S_AXI_ACLK     |    7.226|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.45 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.94 secs
  
 --> 
 
 Total memory usage is 286392 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  225 (   0 filtered)
+Number of warnings :  224 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

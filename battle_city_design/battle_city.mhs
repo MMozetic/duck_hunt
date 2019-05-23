@@ -26,9 +26,8 @@
  PORT battle_city_periph_0_red_o_pin = battle_city_periph_0_red_o, DIR = O, VEC = [7:0]
  PORT battle_city_periph_0_green_o_pin = battle_city_periph_0_green_o, DIR = O, VEC = [7:0]
  PORT battle_city_periph_0_blue_o_pin = battle_city_periph_0_blue_o, DIR = O, VEC = [7:0]
- PORT io_periph_GPIO_IO_I_pin = net_io_periph_GPIO_IO_I_pin, DIR = I, VEC = [4:0]
- PORT battle_city_periph_0_DIP_Data_pin = net_battle_city_periph_0_DIP_Data_pin, DIR = I, VEC = [7:0]
- PORT battle_city_periph_0_LED_Data_pin = battle_city_periph_0_LED_Data, DIR = O, VEC = [7:0]
+ PORT io_periph_GPIO_IO_I_pin = net_io_periph_GPIO_IO_I_pin, DIR = I, VEC = [7:0]
+ PORT io_periph_GPIO_IO_O_pin = io_periph_GPIO_IO_O, DIR = O, VEC = [7:0]
 
 
 BEGIN proc_sys_reset
@@ -158,8 +157,6 @@ BEGIN battle_city_periph
  PORT red_o = battle_city_periph_0_red_o
  PORT green_o = battle_city_periph_0_green_o
  PORT blue_o = battle_city_periph_0_blue_o
- PORT DIP_Data = net_battle_city_periph_0_DIP_Data_pin
- PORT LED_Data = battle_city_periph_0_LED_Data
 END
 
 BEGIN axi_gpio
@@ -167,9 +164,10 @@ BEGIN axi_gpio
  PARAMETER HW_VER = 1.01.b
  PARAMETER C_BASEADDR = 0x40000000
  PARAMETER C_HIGHADDR = 0x4000ffff
- PARAMETER C_GPIO_WIDTH = 5
+ PARAMETER C_GPIO_WIDTH = 8
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_100_0000MHz
  PORT GPIO_IO_I = net_io_periph_GPIO_IO_I_pin
+ PORT GPIO_IO_O = io_periph_GPIO_IO_O
 END
 

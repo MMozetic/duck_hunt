@@ -644,7 +644,7 @@ INFO:HDLCompiler:679 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores
 
 Elaborating entity <GPIO_Core> (architecture <IMP>) with generics from library <axi_gpio_v1_01_b>.
 INFO:HDLCompiler:679 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/gpio_core.vhd" Line 339. Case statement is complete. others clause is never selected
-WARNING:HDLCompiler:634 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" Line 504: Net <Bus2IP1_Data_i[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" Line 504: Net <Bus2IP1_Data_i[8]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -665,7 +665,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
         C_INSTANCE = "io_periph"
         C_S_AXI_ADDR_WIDTH = 9
         C_S_AXI_DATA_WIDTH = 32
-        C_GPIO_WIDTH = 5
+        C_GPIO_WIDTH = 8
         C_GPIO2_WIDTH = 32
         C_ALL_INPUTS = 0
         C_ALL_INPUTS_2 = 0
@@ -685,7 +685,7 @@ INFO:Xst:3210 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gp
 INFO:Xst:3210 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 554: Output port <Bus2IP_WrCE> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 783: Output port <GPIO_intr> of the instance <gpio_core_1> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/axi_gpio.vhd" line 783: Output port <GPIO2_intr> of the instance <gpio_core_1> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <Bus2IP1_Data_i<5:31>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <Bus2IP1_Data_i<8:31>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 1-bit register for signal <ip2bus_rdack_i_D1>.
     Found 32-bit register for signal <ip2bus_data_i_D1>.
     Found 1-bit register for signal <bus2ip_reset>.
@@ -814,9 +814,9 @@ Synthesizing Unit <GPIO_Core>.
     Related source file is "C:/Xilinx/14.6/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_gpio_v1_01_b/hdl/vhdl/gpio_core.vhd".
         C_DW = 32
         C_AW = 9
-        C_GPIO_WIDTH = 5
+        C_GPIO_WIDTH = 8
         C_GPIO2_WIDTH = 32
-        C_MAX_GPIO_WIDTH = 5
+        C_MAX_GPIO_WIDTH = 8
         C_INTERRUPT_PRESENT = 0
         C_DOUT_DEFAULT = "00000000000000000000000000000000"
         C_TRI_DEFAULT = "11111111111111111111111111111111"
@@ -829,20 +829,23 @@ WARNING:Xst:647 - Input <ABus_Reg<7:8>> is never used. This port will be preserv
 WARNING:Xst:647 - Input <BE_Reg> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <GPIO2_IO_I> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <gpio_xferAck_Reg>.
+    Found 1-bit register for signal <GPIO_DBus_i<24>>.
+    Found 1-bit register for signal <GPIO_DBus_i<25>>.
+    Found 1-bit register for signal <GPIO_DBus_i<26>>.
     Found 1-bit register for signal <GPIO_DBus_i<27>>.
     Found 1-bit register for signal <GPIO_DBus_i<28>>.
     Found 1-bit register for signal <GPIO_DBus_i<29>>.
     Found 1-bit register for signal <GPIO_DBus_i<30>>.
     Found 1-bit register for signal <GPIO_DBus_i<31>>.
-    Found 5-bit register for signal <gpio_io_i_d1>.
-    Found 5-bit register for signal <gpio_io_i_d2>.
-    Found 5-bit register for signal <gpio_Data_In>.
-    Found 5-bit register for signal <gpio_Data_Out>.
-    Found 5-bit register for signal <gpio_OE>.
+    Found 8-bit register for signal <gpio_io_i_d1>.
+    Found 8-bit register for signal <gpio_io_i_d2>.
+    Found 8-bit register for signal <gpio_Data_In>.
+    Found 8-bit register for signal <gpio_Data_Out>.
+    Found 8-bit register for signal <gpio_OE>.
     Found 1-bit register for signal <iGPIO_xferAck>.
     Summary:
-	inferred  32 D-type flip-flop(s).
-	inferred  16 Multiplexer(s).
+	inferred  50 D-type flip-flop(s).
+	inferred  22 Multiplexer(s).
 Unit <GPIO_Core> synthesized.
 
 =========================================================================
@@ -851,14 +854,14 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  4-bit adder                                           : 1
-# Registers                                            : 29
- 1-bit register                                        : 19
+# Registers                                            : 32
+ 1-bit register                                        : 22
  2-bit register                                        : 2
  32-bit register                                       : 2
  4-bit register                                        : 1
- 5-bit register                                        : 5
-# Multiplexers                                         : 23
- 1-bit 2-to-1 multiplexer                              : 21
+ 8-bit register                                        : 5
+# Multiplexers                                         : 29
+ 1-bit 2-to-1 multiplexer                              : 27
  32-bit 2-to-1 multiplexer                             : 1
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
@@ -880,10 +883,10 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 112
- Flip-Flops                                            : 112
-# Multiplexers                                         : 19
- 1-bit 2-to-1 multiplexer                              : 17
+# Registers                                            : 130
+ Flip-Flops                                            : 130
+# Multiplexers                                         : 25
+ 1-bit 2-to-1 multiplexer                              : 23
  32-bit 2-to-1 multiplexer                             : 1
  9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
@@ -917,10 +920,7 @@ Optimizing unit <slave_attachment> ...
 Optimizing unit <address_decoder> ...
 
 Optimizing unit <GPIO_Core> ...
-WARNING:Xst:1710 - FF/Latch <io_periph/ip2bus_data_i_D1_26> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_25> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_24> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_23> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <io_periph/ip2bus_data_i_D1_23> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_22> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_21> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_20> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -930,6 +930,8 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_da
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_16> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_15> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_14> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_13> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_12> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_0> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_1> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_2> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -942,8 +944,8 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_da
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_9> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_10> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_11> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_12> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <io_periph/ip2bus_data_i_D1_13> (without init value) has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_19> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_18> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_17> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_16> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_15> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -954,11 +956,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_10> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_9> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_8> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_7> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_18> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_19> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_20> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_21> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_22> has a constant value of 0 in block <battle_city_io_periph_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -991,16 +988,19 @@ Processing Unit <battle_city_io_periph_wrapper> :
 	Found 3-bit shift register for signal <io_periph/gpio_core_1/gpio_Data_In_2>.
 	Found 3-bit shift register for signal <io_periph/gpio_core_1/gpio_Data_In_3>.
 	Found 3-bit shift register for signal <io_periph/gpio_core_1/gpio_Data_In_4>.
+	Found 3-bit shift register for signal <io_periph/gpio_core_1/gpio_Data_In_5>.
+	Found 3-bit shift register for signal <io_periph/gpio_core_1/gpio_Data_In_6>.
+	Found 3-bit shift register for signal <io_periph/gpio_core_1/gpio_Data_In_7>.
 Unit <battle_city_io_periph_wrapper> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 40
- Flip-Flops                                            : 40
-# Shift Registers                                      : 5
- 3-bit shift register                                  : 5
+# Registers                                            : 55
+ Flip-Flops                                            : 55
+# Shift Registers                                      : 8
+ 3-bit shift register                                  : 8
 
 =========================================================================
 
@@ -1023,23 +1023,23 @@ Top Level Output File Name         : battle_city_io_periph_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 54
+# BELS                             : 70
 #      GND                         : 1
-#      INV                         : 1
-#      LUT2                        : 2
-#      LUT3                        : 13
-#      LUT4                        : 3
-#      LUT5                        : 7
-#      LUT6                        : 26
+#      INV                         : 2
+#      LUT2                        : 7
+#      LUT3                        : 23
+#      LUT4                        : 4
+#      LUT5                        : 3
+#      LUT6                        : 29
 #      VCC                         : 1
-# FlipFlops/Latches                : 45
-#      FD                          : 14
-#      FDE                         : 5
-#      FDR                         : 11
-#      FDRE                        : 10
-#      FDSE                        : 5
-# Shift Registers                  : 5
-#      SRLC16E                     : 5
+# FlipFlops/Latches                : 63
+#      FD                          : 13
+#      FDE                         : 8
+#      FDR                         : 18
+#      FDRE                        : 16
+#      FDSE                        : 8
+# Shift Registers                  : 8
+#      SRLC16E                     : 8
 
 Device utilization summary:
 ---------------------------
@@ -1048,21 +1048,21 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              45  out of  54576     0%  
- Number of Slice LUTs:                   57  out of  27288     0%  
-    Number used as Logic:                52  out of  27288     0%  
-    Number used as Memory:                5  out of   6408     0%  
-       Number used as SRL:                5
+ Number of Slice Registers:              63  out of  54576     0%  
+ Number of Slice LUTs:                   76  out of  27288     0%  
+    Number used as Logic:                68  out of  27288     0%  
+    Number used as Memory:                8  out of   6408     0%  
+       Number used as SRL:                8
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     63
-   Number with an unused Flip Flop:      18  out of     63    28%  
-   Number with an unused LUT:             6  out of     63     9%  
-   Number of fully used LUT-FF pairs:    39  out of     63    61%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:     89
+   Number with an unused Flip Flop:      26  out of     89    29%  
+   Number with an unused LUT:            13  out of     89    14%  
+   Number of fully used LUT-FF pairs:    50  out of     89    56%  
+   Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                         214
+ Number of IOs:                         223
  Number of bonded IOBs:                   0  out of    358     0%  
 
 Specific Feature Utilization:
@@ -1088,7 +1088,7 @@ Clock Information:
 -----------------------------------+------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)              | Load  |
 -----------------------------------+------------------------------------+-------+
-S_AXI_ACLK                         | NONE(io_periph/ip2bus_data_i_D1_27)| 50    |
+S_AXI_ACLK                         | NONE(io_periph/ip2bus_data_i_D1_24)| 71    |
 -----------------------------------+------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -1100,8 +1100,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 3.024ns (Maximum Frequency: 330.688MHz)
-   Minimum input arrival time before clock: 3.024ns
+   Minimum period: 3.260ns (Maximum Frequency: 306.748MHz)
+   Minimum input arrival time before clock: 3.340ns
    Maximum output required time after clock: 1.723ns
    Maximum combinational path delay: No path found
 
@@ -1111,51 +1111,51 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
-  Clock period: 3.024ns (frequency: 330.688MHz)
-  Total number of paths / destination ports: 176 / 85
+  Clock period: 3.260ns (frequency: 306.749MHz)
+  Total number of paths / destination ports: 250 / 128
 -------------------------------------------------------------------------
-Delay:               3.024ns (Levels of Logic = 2)
-  Source:            io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (FF)
+Delay:               3.260ns (Levels of Logic = 2)
+  Source:            io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1 (FF)
   Destination:       io_periph/gpio_core_1/GPIO_DBus_i_31 (FF)
   Source Clock:      S_AXI_ACLK rising
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 to io_periph/gpio_core_1/GPIO_DBus_i_31
+  Data Path: io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1 to io_periph/gpio_core_1/GPIO_DBus_i_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              18   0.525   1.235  io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0)
-     LUT6:I5->O            1   0.254   0.682  io_periph/gpio_core_1/Mmux_Read_Reg_In<0>141 (io_periph/gpio_core_1/Read_Reg_In<4>)
-     LUT5:I4->O            1   0.254   0.000  io_periph/gpio_core_1/GPIO_DBus_i_31_rstpot (io_periph/gpio_core_1/GPIO_DBus_i_31_rstpot)
+     FD:C->Q              17   0.525   1.209  io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1 (io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1)
+     LUT4:I3->O            8   0.254   0.944  io_periph/gpio_core_1/Read_Reg_Rst1 (io_periph/gpio_core_1/Read_Reg_Rst)
+     LUT6:I5->O            1   0.254   0.000  io_periph/gpio_core_1/GPIO_DBus_i_31_rstpot (io_periph/gpio_core_1/GPIO_DBus_i_31_rstpot)
      FD:D                      0.074          io_periph/gpio_core_1/GPIO_DBus_i_31
     ----------------------------------------
-    Total                      3.024ns (1.107ns logic, 1.917ns route)
-                                       (36.6% logic, 63.4% route)
+    Total                      3.260ns (1.107ns logic, 2.153ns route)
+                                       (34.0% logic, 66.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 166 / 29
+  Total number of paths / destination ports: 293 / 41
 -------------------------------------------------------------------------
-Offset:              3.024ns (Levels of Logic = 3)
+Offset:              3.340ns (Levels of Logic = 3)
   Source:            S_AXI_ARVALID (PAD)
-  Destination:       io_periph/gpio_core_1/GPIO_DBus_i_31 (FF)
+  Destination:       io_periph/gpio_core_1/gpio_OE_0 (FF)
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: S_AXI_ARVALID to io_periph/gpio_core_1/GPIO_DBus_i_31
+  Data Path: S_AXI_ARVALID to io_periph/gpio_core_1/gpio_OE_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT3:I0->O            5   0.235   1.296  io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_bus2ip_addr_i31 (io_periph/bus2ip_addr<6>)
-     LUT6:I0->O            1   0.254   0.682  io_periph/gpio_core_1/Mmux_Read_Reg_In<0>141 (io_periph/gpio_core_1/Read_Reg_In<4>)
-     LUT5:I4->O            1   0.254   0.000  io_periph/gpio_core_1/GPIO_DBus_i_31_rstpot (io_periph/gpio_core_1/GPIO_DBus_i_31_rstpot)
-     FD:D                      0.074          io_periph/gpio_core_1/GPIO_DBus_i_31
+     LUT3:I0->O           16   0.235   1.612  io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/Mmux_bus2ip_addr_i41 (io_periph/bus2ip_addr<5>)
+     LUT6:I1->O            1   0.254   0.682  io_periph/gpio_core_1/gpio_OE_7_dpot (io_periph/gpio_core_1/gpio_OE_7_dpot)
+     LUT3:I2->O            1   0.254   0.000  io_periph/gpio_core_1/gpio_OE_7_dpot1 (io_periph/gpio_core_1/gpio_OE_7_dpot1)
+     FDSE:D                    0.074          io_periph/gpio_core_1/gpio_OE_7
     ----------------------------------------
-    Total                      3.024ns (1.046ns logic, 1.978ns route)
-                                       (34.6% logic, 65.4% route)
+    Total                      3.340ns (1.046ns logic, 2.294ns route)
+                                       (31.3% logic, 68.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 23 / 20
+  Total number of paths / destination ports: 32 / 29
 -------------------------------------------------------------------------
 Offset:              1.723ns (Levels of Logic = 1)
   Source:            io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3 (FF)
@@ -1166,7 +1166,7 @@ Offset:              1.723ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               8   0.525   0.944  io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3 (io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3)
+     FDR:C->Q              8   0.525   0.944  io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3 (io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3)
      LUT2:I1->O            0   0.254   0.000  io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
     ----------------------------------------
     Total                      1.723ns (0.779ns logic, 0.944ns route)
@@ -1182,20 +1182,20 @@ Clock to Setup on destination clock S_AXI_ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-S_AXI_ACLK     |    3.024|         |         |         |
+S_AXI_ACLK     |    3.260|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.33 secs
+Total CPU time to Xst completion: 6.41 secs
  
 --> 
 
-Total memory usage is 285724 kilobytes
+Total memory usage is 284664 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   80 (   0 filtered)
+Number of warnings :   74 (   0 filtered)
 Number of infos    :    7 (   0 filtered)
 

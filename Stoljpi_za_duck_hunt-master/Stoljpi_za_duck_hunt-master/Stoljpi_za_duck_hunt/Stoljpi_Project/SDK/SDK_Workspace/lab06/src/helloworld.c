@@ -37,7 +37,6 @@
 #include "xparameters.h"
 #include "xintc.h"
 #include "vga_periph_mem.h"
-#define GPIO_BASEADDR 0x7DE00000
 
 
 
@@ -80,6 +79,7 @@ bool stoljpi(){
 	   			for(k=0;k<100000;k++);
 	   			j++;
 	   			if(j>640) j=0;
+
 	   			output = ((u32)in_btn_0 << 1);
 	   			Xil_Out32(XPAR_MY_PERIPHERAL_0_BASEADDR, output);
 	   			input = Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR);

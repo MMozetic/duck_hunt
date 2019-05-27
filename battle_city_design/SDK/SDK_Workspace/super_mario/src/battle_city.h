@@ -1,4 +1,5 @@
 #include "xbasic_types.h"
+#include <stdbool.h>
 
 #ifndef BATTLE_CITY_H_
 #define BATTLE_CITY_H_
@@ -13,7 +14,7 @@
 #define XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR 0x78000000
 
 void draw_square(Xuint32 BaseAddress);
-
+bool stoljpi();
 
 void battle_city();
 

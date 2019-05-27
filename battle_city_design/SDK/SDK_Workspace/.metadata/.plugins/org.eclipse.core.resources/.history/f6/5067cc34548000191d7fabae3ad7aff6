@@ -11,8 +11,6 @@
  * DATE: Wed Jul 08 21:00:48 2015
  */
 
-
-#define GRAPHICS_MEM_OFF 0x2000000
 // ***** 16x16 IMAGES *****
 #define IMG_16x16_bg00			0x00FF
 #define IMG_16x16_bg01			0x013F
@@ -32,7 +30,7 @@
 #define IMG_16x16_bg50			0x04BF
 #define IMG_16x16_bg51			0x04FF
 #define IMG_16x16_bg52			0x053F
-#define IMG_16x16_cursor			0x057F
+#define IMG_16x16_cursor		0x057F
 #define IMG_16x16_pl00			0x05BF
 #define IMG_16x16_pl01			0x05FF
 #define IMG_16x16_pl10			0x063F
@@ -417,7 +415,7 @@ int random_x() {
 
 static void cursor_move() {
 
-	buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
+	/*buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
 	direction_t d = DIR_STILL;
 	if (BTN_LEFT(buttons)) {
 		d = DIR_LEFT;
@@ -450,7 +448,7 @@ static void cursor_move() {
 		cursor.x = cursor.x;
 		cursor.y = cursor.y;
 	}
-	chhar_spawn(&cursor);
+	chhar_spawn(&cursor);*/
 }
 
 bool_t crash_detection() {
@@ -797,6 +795,66 @@ static void duck_move() {
 
 }
 
+bool stoljpi(){
+			u32 output;
+			static int j=0;
+	    	//postavljanje o_pwr na 0 (citanje okidaca)
+
+	    	bool o_pwr = 0;
+	    	output = ((u32)o_pwr << 2);
+	    	Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
+
+	   		u32 input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
+	   		bool in_btn_0 = input & 0x4;
+	   		bool i_sig;
+
+	   		//zastita za rafal
+	   		/*while(in_btn_0 == 0x0){
+
+	   			output = ((u32)in_btn_0 <<1);
+	   			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
+	   			input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
+	   			in_btn_0 = input & 0x4;
+
+	   		}
+	   		//stoji u while-u dok se ne pritisne okidac
+	   		while(in_btn_0 == 0x1){
+
+	   			output = ((u32)in_btn_0 << 1);
+	   			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
+	   			input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
+	   			in_btn_0 = input & 0x4;
+	   		}*/
+
+	   		output = ((u32)in_btn_0 <<1);
+			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
+			input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
+			in_btn_0 = input & 0x4;
+
+	   		//postavljanje o_pwr na 1 (citanje sa senzora)
+	   		o_pwr = 1;
+
+	   		output = ((u32)o_pwr << 2);
+
+	   		Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
+	   		int i;
+	   		for(i = 0; i < 1000000;i++);
+	   		input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
+	   		i_sig = input & 0x4;
+
+
+	   		if(!i_sig){
+	   			printf("belo\n");
+	   		}
+
+	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
+	   		Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
+
+
+	   		return i_sig;
+}
+
+
 void battle_city() {
 
 	unsigned int buttons, tmpBtn = 0, tmpUp = 0;
@@ -808,25 +866,12 @@ void battle_city() {
 	map_reset(map1);
 	map_update();
 
-	chhar_spawn(&cursor);
+	//chhar_spawn(&cursor);
 	chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right, &duck4_right);
 
 	while (1) {
 		duck_move();
+		stoljpi();
 	}
 }
 
-void draw_square(Xuint32 BaseAddress){
-	int i, j, k;
-		for (j = 0; j < 480; j++){
-			for (k = 0; k<(640/32); k++){
-				i = j*(640/32) + k;
-				if ((j > 200) && (j < 280) && (k > 8) && (k < 12)) {
-					VGA_PERIPH_MEM_mWriteMemory(BaseAddress + GRAPHICS_MEM_OFF + i*4, 0xFFFFFFFF);
-				}
-				else{
-					VGA_PERIPH_MEM_mWriteMemory(BaseAddress + GRAPHICS_MEM_OFF + i*4, 0x0);
-				}
-			}
-		}
-}

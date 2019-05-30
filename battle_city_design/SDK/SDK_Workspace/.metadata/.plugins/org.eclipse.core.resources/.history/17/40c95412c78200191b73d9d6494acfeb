@@ -135,7 +135,7 @@ characters duck1_right = { 160,	                        // x
 		TANK1_REG_H             		// reg_h
 		};
 
-characters duck2_right = { 178,	                        // x
+characters duck2_right = { 176,	                        // x
 		131, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pr01,  			// type
@@ -832,7 +832,6 @@ bool stoljpi(){
 	   			input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
 	   			in_btn_0 = input & 0x4;
 	   		}
-
 
 	   		output = ((u32)in_btn_0 <<1);
 			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);

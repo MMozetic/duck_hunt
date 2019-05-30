@@ -379,25 +379,15 @@ static void map_update() {
 			case 29:
 				Xil_Out32(addr, IMG_16x16_bg52);
 				break;
+			case 30:
+				Xil_Out32(addr,IMG_16x16_white);
+				break;
 			default:
 				Xil_Out32(addr, IMG_16x16_sky);
 				break;
 			}
 		}
 	}
-}
-
-static void map_update_shot(){
-	int x, y;
-		long int addr;
-
-		for (y = 0; y < MAP_HEIGHT; y++) {
-			for (x = 0; x < MAP_WIDTH; x++) {
-				addr = XPAR_BATTLE_CITY_PERIPH_0_BASEADDR
-						+ 4 * (MAP_BASE_ADDRESS + y * MAP_WIDTH + x);
-				Xil_Out32(addr, IMG_16x16_black);
-				}
-		}
 }
 
 static void map_reset(unsigned char * map) {
@@ -843,7 +833,7 @@ bool stoljpi(){
 	   			in_btn_0 = input & 0x4;
 	   		}
 
-	   		map_update_shot();
+
 	   		output = ((u32)in_btn_0 <<1);
 			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
 			input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
@@ -868,6 +858,7 @@ bool stoljpi(){
 	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
 	   		Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
 
+
 	   		return i_sig;
 }
 
@@ -888,7 +879,6 @@ void battle_city() {
 
 	while (1) {
 		stoljpi();
-		map_update();
 	}
 }
 

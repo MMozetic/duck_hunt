@@ -379,6 +379,9 @@ static void map_update() {
 			case 29:
 				Xil_Out32(addr, IMG_16x16_bg52);
 				break;
+			case 30:
+				Xil_Out32(addr,IMG_16x16_white);
+				break;
 			default:
 				Xil_Out32(addr, IMG_16x16_sky);
 				break;

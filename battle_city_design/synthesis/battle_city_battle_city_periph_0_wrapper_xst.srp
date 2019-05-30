@@ -1,10 +1,10 @@
 Release 14.6 - xst P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:\ra207-2016\duck_hunt\battle_city_design\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to D:\Ra92-2016\duck_hunt\battle_city_design\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "battle_city_battle_city_periph_0_wrapper_xst.prj"
-Verilog Include Directory          : {"D:\ra207-2016\duck_hunt\battle_city_design\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"D:\Ra92-2016\duck_hunt\battle_city_design\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx45fgg676-2
@@ -62,24 +62,24 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <vga_ctrl>.
-Parsing VHDL file "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <battle_city>.
 Parsing architecture <Behavioral> of entity <battle_city>.
-Parsing VHDL file "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <battle_city_periph>.
 Parsing architecture <IMP> of entity <battle_city_periph>.
-Parsing VHDL file "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <ram>.
 Parsing architecture <arch> of entity <ram>.
-Parsing VHDL file "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_a.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_a.vhd" into library battle_city_periph_v1_01_a
 Parsing architecture <arch_v1> of entity <vga_ctrl>.
-Parsing VHDL file "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_e.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_e.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <clk_gen_100MHz>.
-Parsing VHDL file "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_a.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_a.vhd" into library battle_city_periph_v1_01_a
 Parsing architecture <arch_v1> of entity <clk_gen_100mhz>.
-Parsing VHDL file "D:\ra207-2016\duck_hunt\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd" into library work
+Parsing VHDL file "D:\Ra92-2016\duck_hunt\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd" into library work
 Parsing entity <battle_city_battle_city_periph_0_wrapper>.
 Parsing architecture <STRUCTURE> of entity <battle_city_battle_city_periph_0_wrapper>.
 
@@ -94,8 +94,8 @@ Elaborating entity <battle_city_periph> (architecture <IMP>) with generics from 
 Elaborating entity <vga_ctrl> (architecture <arch_v1>) from library <battle_city_periph_v1_01_a>.
 
 Elaborating entity <battle_city> (architecture <Behavioral>) with generics from library <battle_city_periph_v1_01_a>.
-WARNING:HDLCompiler:1127 - "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 505: Assignment to img_addr_r7 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 633: Assignment to reg_intsect_r13 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 505: Assignment to img_addr_r7 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 633: Assignment to reg_intsect_r13 ignored, since the identifier is never used
 
 Elaborating entity <ram> (architecture <arch>) with generics from library <battle_city_periph_v1_01_a>.
 
@@ -104,13 +104,13 @@ Elaborating entity <ram> (architecture <arch>) with generics from library <battl
 =========================================================================
 
 Synthesizing Unit <battle_city_battle_city_periph_0_wrapper>.
-    Related source file is "D:\ra207-2016\duck_hunt\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd".
+    Related source file is "D:\Ra92-2016\duck_hunt\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd".
     Summary:
 	no macro.
 Unit <battle_city_battle_city_periph_0_wrapper> synthesized.
 
 Synthesizing Unit <battle_city_periph>.
-    Related source file is "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd".
+    Related source file is "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_S_AXI_DATA_WIDTH = 32
@@ -144,7 +144,7 @@ WARNING:Xst:647 - Input <S_AXI_RREADY> is never used. This port will be preserve
 Unit <battle_city_periph> synthesized.
 
 Synthesizing Unit <vga_ctrl>.
-    Related source file is "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd".
+    Related source file is "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd".
     Found 10-bit register for signal <pixel_x>.
     Found 9-bit register for signal <pixel_y>.
     Found 1-bit register for signal <vga_clk>.
@@ -174,7 +174,7 @@ Synthesizing Unit <vga_ctrl>.
 Unit <vga_ctrl> synthesized.
 
 Synthesizing Unit <battle_city>.
-    Related source file is "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd".
+    Related source file is "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd".
         DATA_WIDTH = 32
         COLOR_WIDTH = 24
         ADDR_WIDTH = 13
@@ -352,7 +352,7 @@ WARNING:Xst:647 - Input <rst_n_i> is never used. This port will be preserved and
 Unit <battle_city> synthesized.
 
 Synthesizing Unit <ram>.
-    Related source file is "D:/ra207-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd".
+    Related source file is "D:/Ra92-2016/duck_hunt/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd".
         DATA_WIDTH = 32
         ADDR_WIDTH = 13
     Found 8192x32-bit dual-port RAM <Mram_mem> for signal <mem>.
@@ -666,7 +666,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <battle_city_i/map_addr_r1_12> (without init value) has a constant value of 0 in block <battle_city_periph>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_8_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_8_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_8_15> of sequential type is unconnected in block <battle_city_periph>.
@@ -706,17 +705,14 @@ WARNING:Xst:2677 - Node <pixel_y_d1_0> of sequential type is unconnected in bloc
 Optimizing unit <battle_city_battle_city_periph_0_wrapper> ...
 
 Optimizing unit <battle_city_periph> ...
+WARNING:Xst:1710 - FF/Latch <battle_city_i/map_addr_r1_11> (without init value) has a constant value of 1 in block <battle_city_periph>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <battle_city_i/map_addr_r1_12> (without init value) has a constant value of 0 in block <battle_city_periph>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <vga_ctrl> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block battle_city_battle_city_periph_0_wrapper, actual ratio is 7.
-FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_0 has been replicated 1 time(s)
-FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_1 has been replicated 1 time(s)
-FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_2 has been replicated 1 time(s)
-FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_3 has been replicated 1 time(s)
-FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_6 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -780,8 +776,8 @@ Unit <battle_city_battle_city_periph_0_wrapper> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 660
- Flip-Flops                                            : 660
+# Registers                                            : 654
+ Flip-Flops                                            : 654
 # Shift Registers                                      : 53
  10-bit shift register                                 : 8
  2-bit shift register                                  : 8
@@ -810,24 +806,24 @@ Top Level Output File Name         : battle_city_battle_city_periph_0_wrapper.ng
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2079
+# BELS                             : 2093
 #      GND                         : 1
 #      INV                         : 10
 #      LUT1                        : 141
-#      LUT2                        : 128
-#      LUT3                        : 20
-#      LUT4                        : 840
-#      LUT5                        : 65
-#      LUT6                        : 173
-#      MUXCY                       : 413
-#      MUXF7                       : 39
+#      LUT2                        : 133
+#      LUT3                        : 23
+#      LUT4                        : 820
+#      LUT5                        : 101
+#      LUT6                        : 159
+#      MUXCY                       : 419
+#      MUXF7                       : 37
 #      VCC                         : 1
 #      XORCY                       : 248
-# FlipFlops/Latches                : 713
-#      FD                          : 157
+# FlipFlops/Latches                : 707
+#      FD                          : 141
 #      FDE                         : 545
 #      FDR                         : 2
-#      FDRE                        : 9
+#      FDRE                        : 19
 # RAMS                             : 16
 #      RAMB16BWER                  : 16
 # Shift Registers                  : 53
@@ -840,18 +836,18 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             713  out of  54576     1%  
- Number of Slice LUTs:                 1430  out of  27288     5%  
-    Number used as Logic:              1377  out of  27288     5%  
+ Number of Slice Registers:             707  out of  54576     1%  
+ Number of Slice LUTs:                 1440  out of  27288     5%  
+    Number used as Logic:              1387  out of  27288     5%  
     Number used as Memory:               53  out of   6408     0%  
        Number used as SRL:               53
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1496
-   Number with an unused Flip Flop:     783  out of   1496    52%  
-   Number with an unused LUT:            66  out of   1496     4%  
-   Number of fully used LUT-FF pairs:   647  out of   1496    43%  
-   Number of unique control sets:         7
+ Number of LUT Flip Flop pairs used:   1517
+   Number with an unused Flip Flop:     810  out of   1517    53%  
+   Number with an unused LUT:            77  out of   1517     5%  
+   Number of fully used LUT-FF pairs:   630  out of   1517    41%  
+   Number of unique control sets:         8
 
 IO Utilization: 
  Number of IOs:                         181
@@ -882,7 +878,7 @@ Clock Information:
 -----------------------------------+-----------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                     | Load  |
 -----------------------------------+-----------------------------------------------------------+-------+
-S_AXI_ACLK                         | NONE(battle_city_periph_0/battle_city_i/sprt_int_col_r7_3)| 782   |
+S_AXI_ACLK                         | NONE(battle_city_periph_0/battle_city_i/sprt_int_col_r7_3)| 776   |
 -----------------------------------+-----------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -894,10 +890,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 7.226ns (Maximum Frequency: 138.394MHz)
-   Minimum input arrival time before clock: 7.046ns
-   Maximum output required time after clock: 1.545ns
-   Maximum combinational path delay: 0.464ns
+   Minimum period: 7.634ns (Maximum Frequency: 130.997MHz)
+   Minimum input arrival time before clock: 7.021ns
+   Maximum output required time after clock: 1.754ns
+   Maximum combinational path delay: 0.359ns
 
 Timing Details:
 ---------------
@@ -905,66 +901,66 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
-  Clock period: 7.226ns (frequency: 138.394MHz)
-  Total number of paths / destination ports: 25623 / 1541
+  Clock period: 7.634ns (frequency: 130.997MHz)
+  Total number of paths / destination ports: 38864 / 1555
 -------------------------------------------------------------------------
-Delay:               7.226ns (Levels of Logic = 15)
-  Source:            battle_city_periph_0/battle_city_i/registers_s_1_24 (FF)
-  Destination:       battle_city_periph_0/battle_city_i/reg_intersected_r1_0 (FF)
+Delay:               7.634ns (Levels of Logic = 15)
+  Source:            battle_city_periph_0/battle_city_i/registers_s_7_24 (FF)
+  Destination:       battle_city_periph_0/battle_city_i/reg_intersected_r1_1 (FF)
   Source Clock:      S_AXI_ACLK rising
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: battle_city_periph_0/battle_city_i/registers_s_1_24 to battle_city_periph_0/battle_city_i/reg_intersected_r1_0
+  Data Path: battle_city_periph_0/battle_city_i/registers_s_7_24 to battle_city_periph_0/battle_city_i/reg_intersected_r1_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              4   0.525   0.912  battle_city_periph_0/battle_city_i/registers_s_1_24 (battle_city_periph_0/battle_city_i/registers_s_1_24)
-     LUT2:I0->O            1   0.250   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_lut<0> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<0> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<1> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<2> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<3> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<4> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<5> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<6> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_cy<6>)
-     XORCY:CI->O           2   0.206   1.002  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<1>_xor<7> (battle_city_periph_0/battle_city_i/reg_end_row_s<1><7>)
-     LUT4:I0->O            0   0.254   0.000  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[1][8]_LessThan_58_o_lutdi3 (battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[1][8]_LessThan_58_o_lutdi3)
-     MUXCY:DI->O           1   0.181   0.000  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[1][8]_LessThan_58_o_cy<3> (battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[1][8]_LessThan_58_o_cy<3>)
-     MUXCY:CI->O           1   0.235   0.790  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[1][8]_LessThan_58_o_cy<4> (battle_city_periph_0/battle_city_i/pixel_row_i[8]_reg_end_row_s[1][8]_LessThan_58_o)
-     LUT5:I3->O            2   0.250   1.002  battle_city_periph_0/battle_city_i/reg_intsect_s0<1>1 (battle_city_periph_0/battle_city_i/reg_intsect_s0<1>)
-     LUT4:I0->O            1   0.254   0.682  battle_city_periph_0/battle_city_i/reg_intersected_r1_0_rstpot_SW0 (N42)
-     LUT6:I5->O            1   0.254   0.000  battle_city_periph_0/battle_city_i/reg_intersected_r1_0_rstpot (battle_city_periph_0/battle_city_i/reg_intersected_r1_0_rstpot)
-     FD:D                      0.074          battle_city_periph_0/battle_city_i/reg_intersected_r1_0
+     FDE:C->Q              4   0.525   0.912  battle_city_periph_0/battle_city_i/registers_s_7_24 (battle_city_periph_0/battle_city_i/registers_s_7_24)
+     LUT2:I0->O            1   0.250   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_lut<0> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<0> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<1> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<2> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<3> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<4> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<5> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<6> (battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_cy<6>)
+     XORCY:CI->O           2   0.206   1.002  battle_city_periph_0/battle_city_i/Madd_reg_end_row_s<7>_xor<7> (battle_city_periph_0/battle_city_i/reg_end_row_s<7><7>)
+     LUT4:I0->O            0   0.254   0.000  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_lutdi3 (battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_lutdi3)
+     MUXCY:DI->O           1   0.181   0.000  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_cy<3> (battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_cy<3>)
+     MUXCY:CI->O           1   0.235   0.790  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_cy<4> (battle_city_periph_0/battle_city_i/pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o)
+     LUT5:I3->O            6   0.250   1.306  battle_city_periph_0/battle_city_i/reg_intsect_s0<7>1 (battle_city_periph_0/battle_city_i/reg_intsect_s0<7>)
+     LUT5:I0->O            1   0.254   0.790  battle_city_periph_0/battle_city_i/reg_intersected_r1_1_rstpot_SW0 (N23)
+     LUT6:I4->O            1   0.250   0.000  battle_city_periph_0/battle_city_i/reg_intersected_r1_1_rstpot (battle_city_periph_0/battle_city_i/reg_intersected_r1_1_rstpot)
+     FD:D                      0.074          battle_city_periph_0/battle_city_i/reg_intersected_r1_1
     ----------------------------------------
-    Total                      7.226ns (2.838ns logic, 4.388ns route)
-                                       (39.3% logic, 60.7% route)
+    Total                      7.634ns (2.834ns logic, 4.800ns route)
+                                       (37.1% logic, 62.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 56836 / 1231
+  Total number of paths / destination ports: 63581 / 1226
 -------------------------------------------------------------------------
-Offset:              7.046ns (Levels of Logic = 3)
-  Source:            S_AXI_AWADDR<31> (PAD)
+Offset:              7.021ns (Levels of Logic = 3)
+  Source:            S_AXI_AWADDR<18> (PAD)
   Destination:       battle_city_periph_0/battle_city_i/registers_s_1_56 (FF)
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: S_AXI_AWADDR<31> to battle_city_periph_0/battle_city_i/registers_s_1_56
+  Data Path: S_AXI_AWADDR<18> to battle_city_periph_0/battle_city_i/registers_s_1_56
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT6:I0->O            1   0.254   1.137  battle_city_periph_0/write_regs_en2 (battle_city_periph_0/write_regs_en2)
-     LUT6:I0->O           65   0.254   1.937  battle_city_periph_0/write_regs_en4 (battle_city_periph_0/write_regs_en)
+     LUT5:I0->O            1   0.254   1.137  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o23 (battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o23)
+     LUT6:I0->O           65   0.254   1.937  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o24 (battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o2)
      LUT6:I5->O          450   0.254   2.452  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o3 (battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o)
      FDE:CE                    0.302          battle_city_periph_0/battle_city_i/registers_s_8_0
     ----------------------------------------
-    Total                      7.046ns (1.520ns logic, 5.526ns route)
-                                       (21.6% logic, 78.4% route)
+    Total                      7.021ns (1.495ns logic, 5.526ns route)
+                                       (21.3% logic, 78.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
   Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
-Offset:              1.545ns (Levels of Logic = 1)
+Offset:              1.754ns (Levels of Logic = 1)
   Source:            battle_city_periph_0/r_write_response (FF)
   Destination:       S_AXI_WREADY (PAD)
   Source Clock:      S_AXI_ACLK rising
@@ -973,17 +969,17 @@ Offset:              1.545ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.525   0.766  battle_city_periph_0/r_write_response (battle_city_periph_0/r_write_response)
-     LUT3:I2->O            0   0.254   0.000  battle_city_periph_0/accept_write1 (S_AXI_AWREADY)
+     FD:C->Q               3   0.525   0.994  battle_city_periph_0/r_write_response (battle_city_periph_0/r_write_response)
+     LUT3:I0->O            0   0.235   0.000  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o211 (S_AXI_AWREADY)
     ----------------------------------------
-    Total                      1.545ns (0.779ns logic, 0.766ns route)
-                                       (50.4% logic, 49.6% route)
+    Total                      1.754ns (0.760ns logic, 0.994ns route)
+                                       (43.3% logic, 56.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 4 / 2
 -------------------------------------------------------------------------
-Delay:               0.464ns (Levels of Logic = 1)
+Delay:               0.359ns (Levels of Logic = 1)
   Source:            S_AXI_AWVALID (PAD)
   Destination:       S_AXI_WREADY (PAD)
 
@@ -991,9 +987,9 @@ Delay:               0.464ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT3:I0->O            0   0.235   0.000  battle_city_periph_0/accept_write1 (S_AXI_AWREADY)
+     LUT3:I1->O            0   0.250   0.000  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o211 (S_AXI_AWREADY)
     ----------------------------------------
-    Total                      0.464ns (0.464ns logic, 0.000ns route)
+    Total                      0.359ns (0.359ns logic, 0.000ns route)
                                        (100.0% logic, 0.0% route)
 
 =========================================================================
@@ -1006,20 +1002,20 @@ Clock to Setup on destination clock S_AXI_ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-S_AXI_ACLK     |    7.226|         |         |         |
+S_AXI_ACLK     |    7.634|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.65 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.68 secs
  
 --> 
 
-Total memory usage is 286200 kilobytes
+Total memory usage is 287416 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  224 (   0 filtered)
+Number of warnings :  225 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

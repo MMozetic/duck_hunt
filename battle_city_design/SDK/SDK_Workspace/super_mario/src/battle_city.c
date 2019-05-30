@@ -85,7 +85,7 @@ int score = 0;
 int mapPart = 1;
 int udario_glavom_skok = 0;
 int map_move = 0;
-int brojac = 0;
+unsigned int change = 0;
 int udario_u_blok = 0;
 int direction = 0;
 unsigned int buttons;
@@ -212,18 +212,6 @@ characters duck4_left = { 176,	                        // x
 		TANK_AI_REG_H4             		// reg_h
 		};
 
-
-unsigned int rand_lfsr113(void) {
-	static unsigned int z1 = 12345, z2 = 12345;
-	unsigned int b;
-
-	b = ((z1 << 6) ^ z1) >> 13;
-	z1 = ((z1 & 4294967294U) << 18) ^ b;
-	b = ((z2 << 2) ^ z2) >> 27;
-	z2 = ((z2 & 4294967288U) << 2) ^ b;
-
-	return (z1 ^ z2);
-}
 
 static void chhar_spawn(characters * chhar) {
 	Xil_Out32(
@@ -388,7 +376,7 @@ static void map_update() {
 }
 
 static void map_update_shot(){
-	int x, y;
+	int x, y, i;
 		long int addr;
 
 		for (y = 0; y < MAP_HEIGHT; y++) {
@@ -398,6 +386,8 @@ static void map_update_shot(){
 				Xil_Out32(addr, IMG_16x16_black);
 				}
 		}
+
+		for(i = 0; i < 3000000; i++);
 }
 
 static void map_reset(unsigned char * map) {
@@ -426,44 +416,6 @@ int random() {
 
 int random_x() {
 	return rand() % 600;
-}
-
-static void cursor_move() {
-
-	/*buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
-	direction_t d = DIR_STILL;
-	if (BTN_LEFT(buttons)) {
-		d = DIR_LEFT;
-	} else if (BTN_RIGHT(buttons)) {
-		d = DIR_RIGHT;
-	} else if (BTN_UP(buttons)) {
-		d = DIR_UP;
-	} else if (BTN_DOWN(buttons)) {
-		d = DIR_DOWN;
-	}
-
-	switch (d) {
-	case DIR_DOWN:
-		cursor.y += 2;
-		break;
-	case DIR_UP:
-		cursor.y -= 2;
-		break;
-	case DIR_LEFT:
-		cursor.x -= 2;
-		break;
-	case DIR_RIGHT:
-		cursor.x += 2;
-		break;
-	case DIR_STILL:
-		cursor.x = cursor.x;
-		cursor.y = cursor.y;
-		break;
-	default:
-		cursor.x = cursor.x;
-		cursor.y = cursor.y;
-	}
-	chhar_spawn(&cursor);*/
 }
 
 bool_t crash_detection() {
@@ -499,16 +451,22 @@ void reset_duck() {
 	duck4_right.x = duck1_left.x + 16;
 }
 
+
 static void duck_move() {
 	int i, j;
-	unsigned int y;
+	static int count = 0;
+	static int framesNum = 5;
+	if(count == framesNum){
+		direction = random_direction();
+		framesNum = random();
+		count = 0;
+	}
+	count++;
 
-	direction = random_direction();
+
 
 	if (direction == 0) {
 
-		y = random();
-		for (i = 0; i < y; i++) {
 			duck1_left.y -= 1;
 			duck2_left.y -= 1;
 			duck3_left.y -= 1;
@@ -526,7 +484,6 @@ static void duck_move() {
 			duck2_right.x -= 1;
 			duck3_right.x -= 1;
 			duck4_right.x -= 1;
-			cursor_move();
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
 			if (crash_detection() == b_true) {
@@ -546,11 +503,9 @@ static void duck_move() {
 				return;
 			}
 
-		}
+
 
 	} else if (direction == 1) {
-		y = random();
-		for (i = 0; i < y; i++) {
 			duck1_left.y -= 1;
 			duck2_left.y -= 1;
 			duck3_left.y -= 1;
@@ -561,7 +516,6 @@ static void duck_move() {
 			duck4_right.y -= 1;
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-			cursor_move();
 			if (crash_detection() == b_true) {
 				//lives--;
 				for (j = 0; j < 10000000; j++) {
@@ -578,12 +532,9 @@ static void duck_move() {
 				return;
 			}
 
-		}
 
 	} else if (direction == 2) {
 
-		y = random();
-		for (i = 0; i < y; i++) {
 			duck1_left.y -= 1;
 			duck2_left.y -= 1;
 			duck3_left.y -= 1;
@@ -603,7 +554,6 @@ static void duck_move() {
 			duck4_right.x += 1;
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
-			cursor_move();
 			if (crash_detection() == b_true) {
 				lives--;
 				for (j = 0; j < 10000000; j++) {
@@ -620,11 +570,8 @@ static void duck_move() {
 				return;
 			}
 
-		}
 
 	} else if (direction == 3) {
-		y = random();
-		for (i = 0; i < y; i++) {
 			duck1_right.x -= 1;
 			duck2_right.x -= 1;
 			duck3_right.x -= 1;
@@ -636,7 +583,6 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-			cursor_move();
 			if (crash_detection() == b_true) {
 				lives--;
 				for (j = 0; j < 10000000; j++) {
@@ -653,11 +599,8 @@ static void duck_move() {
 				return;
 			}
 
-		}
 
 	} else if (direction == 4) {
-		y = random();
-		for (i = 0; i < y; i++) {
 			duck1_left.x += 1;
 			duck2_left.x += 1;
 			duck3_left.x += 1;
@@ -669,7 +612,6 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
-			cursor_move();
 			if (crash_detection() == b_true) {
 				lives--;
 				for (j = 0; j < 10000000; j++) {
@@ -686,12 +628,9 @@ static void duck_move() {
 			if (duck1_right.x > 600) {
 				return;
 			}
-		}
 
 	} else if (direction == 5) {
 
-		y = random();
-		for (i = 0; i < y; i++) {
 			duck1_right.x -= 1;
 			duck2_right.x -= 1;
 			duck3_right.x -= 1;
@@ -711,7 +650,6 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-			cursor_move();
 			if (crash_detection() == b_true) {
 				//lives--;
 				for (j = 0; j < 10000000; j++) {
@@ -728,12 +666,8 @@ static void duck_move() {
 				return;
 			}
 
-		}
 
 	} else if (direction == 6) {
-		y = random();
-
-		for (i = 0; i < y; i++) {
 			duck1_left.y += 1;
 			duck2_left.y += 1;
 			duck3_left.y += 1;
@@ -745,7 +679,6 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-			cursor_move();
 			if (crash_detection() == b_true) {
 				//lives--;
 				for (j = 0; j < 10000000; j++) {
@@ -762,12 +695,9 @@ static void duck_move() {
 				return;
 			}
 
-		}
 
 	} else if (direction == 7) {
 
-		y = random();
-		for (i = 0; i < y; i++) {
 			duck1_left.x += 1;
 			duck2_left.x += 1;
 			duck3_left.x += 1;
@@ -787,7 +717,6 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
-			cursor_move();
 			if (crash_detection() == b_true) {
 				//lives--;
 				for (j = 0; j < 10000000; j++) {
@@ -804,7 +733,6 @@ static void duck_move() {
 				return;
 			}
 
-		}
 
 	}
 

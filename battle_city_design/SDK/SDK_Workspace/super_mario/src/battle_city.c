@@ -157,7 +157,7 @@ characters duck3_right = { 160,	                        // x
 		TANK_AI_REG_H3             		// reg_h
 		};
 
-characters duck4_right = { 176,	                        // x
+characters duck4_right = { 174,	                        // x
 		147, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pr11,  			// type
@@ -168,7 +168,7 @@ characters duck4_right = { 176,	                        // x
 		TANK_AI_REG_H4             		// reg_h
 		};
 
-characters duck1_left = { 160,	                        // x
+characters duck1_left = { 162,	                        // x
 		131, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pl00,  			// type
@@ -190,7 +190,7 @@ characters duck2_left = { 176,	                        // x
 		TANK_AI_REG_H2             		// reg_h
 		};
 
-characters duck3_left = { 160,	                        // x
+characters duck3_left = { 162,	                        // x
 		147, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pl10,  			// type
@@ -378,6 +378,9 @@ static void map_update() {
 				break;
 			case 29:
 				Xil_Out32(addr, IMG_16x16_bg52);
+				break;
+			case 30:
+				Xil_Out32(addr,IMG_16x16_white);
 				break;
 			default:
 				Xil_Out32(addr, IMG_16x16_sky);

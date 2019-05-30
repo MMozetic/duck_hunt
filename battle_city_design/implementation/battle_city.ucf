@@ -57,6 +57,7 @@ NET battle_city_periph_0_blue_o_pin(5)         LOC = K18  | IOSTANDARD = LVTTL;
 NET battle_city_periph_0_blue_o_pin(6)         LOC = C19  | IOSTANDARD = LVTTL;
 NET battle_city_periph_0_blue_o_pin(7)         LOC = C20  | IOSTANDARD = LVTTL;
 
+#stoljpi dip je i led je o
 
 NET io_periph_GPIO_IO_I_pin[0] LOC = "W19"  |  IOSTANDARD = "LVCMOS33"; # i_sw(0)
 NET io_periph_GPIO_IO_I_pin[1] LOC = "AA23"  |  IOSTANDARD = "LVCMOS33"; # BTN_UP, in_btn(0)

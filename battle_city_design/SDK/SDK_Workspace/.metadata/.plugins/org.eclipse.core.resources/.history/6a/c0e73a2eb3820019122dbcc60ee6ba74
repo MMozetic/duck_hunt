@@ -45,7 +45,7 @@
 
 
 // ***** MAP *****
-#define MAP_BASE_ADDRESS			2175 // MAP_OFFSET in battle_city.vhd
+#define MAP_BASE_ADDRESS			2047 // MAP_OFFSET in battle_city.vhd
 #define MAP_X							0
 #define MAP_X2							640
 #define MAP_Y							4

@@ -213,51 +213,6 @@ characters duck4_left = { 176,	                        // x
 		};
 
 
-characters duck1_white = { 162,	                        // x
-		131, 		                     // y
-		DIR_RIGHT,              		// dir
-		IMG_16x16_white,  			// type
-
-		b_false,                		// destroyed
-
-		TANK1_REG_L,            		// reg_l
-		TANK1_REG_H             		// reg_h
-		};
-
-characters duck2_white = { 176,	                        // x
-		131, 		                     // y
-		DIR_RIGHT,              		// dir
-		IMG_16x16_white,  			// type
-
-		b_false,                		// destroyed
-
-		TANK_AI_REG_L2,            		// reg_l
-		TANK_AI_REG_H2             		// reg_h
-		};
-
-characters duck3_white = { 162,	                        // x
-		147, 		                     // y
-		DIR_RIGHT,              		// dir
-		IMG_16x16_white,  			// type
-
-		b_false,                		// destroyed
-
-		TANK_AI_REG_L3,            		// reg_l
-		TANK_AI_REG_H3             		// reg_h
-		};
-
-characters duck4_white = { 176,	                        // x
-		147, 		                     // y
-		DIR_RIGHT,              		// dir
-		IMG_16x16_white,  			// type
-
-		b_false,                		// destroyed
-
-		TANK_AI_REG_L4,            		// reg_l
-		TANK_AI_REG_H4             		// reg_h
-		};
-
-
 static void chhar_spawn(characters * chhar) {
 	Xil_Out32(
 			XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + chhar->reg_l ),
@@ -432,8 +387,6 @@ static void map_update_shot(){
 				}
 		}
 
-		chhar_spawn_duck(&duck1_white, &duck2_white,&duck3_white,&duck4_white);
-
 		for(i = 0; i < 3000000; i++);
 }
 
@@ -531,16 +484,6 @@ static void duck_move() {
 			duck2_right.x -= 1;
 			duck3_right.x -= 1;
 			duck4_right.x -= 1;
-
-			duck1_white.y -= 1;
-			duck2_white.y -= 1;
-			duck3_white.y -= 1;
-			duck4_white.y -= 1;
-			duck1_white.x -= 1;
-			duck2_white.x -= 1;
-			duck3_white.x -= 1;
-			duck4_white.x -= 1;
-
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
 			if (crash_detection() == b_true) {
@@ -571,12 +514,6 @@ static void duck_move() {
 			duck2_right.y -= 1;
 			duck3_right.y -= 1;
 			duck4_right.y -= 1;
-
-			duck1_white.y -= 1;
-			duck2_white.y -= 1;
-			duck3_white.y -= 1;
-			duck4_white.y -= 1;
-
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
 			if (crash_detection() == b_true) {
@@ -615,16 +552,6 @@ static void duck_move() {
 			duck2_right.x += 1;
 			duck3_right.x += 1;
 			duck4_right.x += 1;
-
-			duck1_white.y -= 1;
-			duck2_white.y -= 1;
-			duck3_white.y -= 1;
-			duck4_white.y -= 1;
-			duck1_white.x += 1;
-			duck2_white.x += 1;
-			duck3_white.x += 1;
-			duck4_white.x += 1;
-
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
 			if (crash_detection() == b_true) {
@@ -654,11 +581,6 @@ static void duck_move() {
 			duck3_left.x -= 1;
 			duck4_left.x -= 1;
 
-			duck1_white.x -= 1;
-			duck2_white.x -= 1;
-			duck3_white.x -= 1;
-			duck4_white.x -= 1;
-
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
 			if (crash_detection() == b_true) {
@@ -687,11 +609,6 @@ static void duck_move() {
 			duck2_right.x += 1;
 			duck3_right.x += 1;
 			duck4_right.x += 1;
-
-			duck1_white.x += 1;
-			duck2_white.x += 1;
-			duck3_white.x += 1;
-			duck4_white.x += 1;
 
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
@@ -731,15 +648,6 @@ static void duck_move() {
 			duck3_right.y += 1;
 			duck4_right.y += 1;
 
-			duck1_white.y += 1;
-			duck2_white.y += 1;
-			duck3_white.y += 1;
-			duck4_white.y += 1;
-			duck1_white.x -= 1;
-			duck2_white.x -= 1;
-			duck3_white.x -= 1;
-			duck4_white.x -= 1;
-
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
 			if (crash_detection() == b_true) {
@@ -768,11 +676,6 @@ static void duck_move() {
 			duck2_right.y += 1;
 			duck3_right.y += 1;
 			duck4_right.y += 1;
-
-			duck1_white.y += 1;
-			duck2_white.y += 1;
-			duck3_white.y += 1;
-			duck4_white.y += 1;
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
@@ -811,15 +714,6 @@ static void duck_move() {
 			duck2_right.y += 1;
 			duck3_right.y += 1;
 			duck4_right.y += 1;
-
-			duck1_white.y += 1;
-			duck2_white.y += 1;
-			duck3_white.y += 1;
-			duck4_white.y += 1;
-			duck1_white.x += 1;
-			duck2_white.x += 1;
-			duck3_white.x += 1;
-			duck4_white.x += 1;
 
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);

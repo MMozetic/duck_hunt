@@ -809,7 +809,8 @@ bool stoljpi(){
 	   		bool i_sig;
 
 	   		//zastita za rafal
-	   		/*while(in_btn_0 == 0x0){
+	   		while(in_btn_0 == 0x0){
+	   			duck_move();
 
 	   			output = ((u32)in_btn_0 <<1);
 	   			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
@@ -819,12 +820,13 @@ bool stoljpi(){
 	   		}
 	   		//stoji u while-u dok se ne pritisne okidac
 	   		while(in_btn_0 == 0x1){
+	   			duck_move();
 
 	   			output = ((u32)in_btn_0 << 1);
 	   			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
 	   			input = Xil_In32(XPAR_IO_PERIPH_BASEADDR);
 	   			in_btn_0 = input & 0x4;
-	   		}*/
+	   		}
 
 	   		output = ((u32)in_btn_0 <<1);
 			Xil_Out32(XPAR_IO_PERIPH_BASEADDR, output);
@@ -870,7 +872,6 @@ void battle_city() {
 	chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right, &duck4_right);
 
 	while (1) {
-		duck_move();
 		stoljpi();
 	}
 }

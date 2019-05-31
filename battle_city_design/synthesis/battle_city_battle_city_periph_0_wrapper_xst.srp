@@ -713,6 +713,8 @@ Optimizing unit <vga_ctrl> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block battle_city_battle_city_periph_0_wrapper, actual ratio is 7.
+FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_y_4 has been replicated 1 time(s)
+FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_y_6 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -776,8 +778,8 @@ Unit <battle_city_battle_city_periph_0_wrapper> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 654
- Flip-Flops                                            : 654
+# Registers                                            : 656
+ Flip-Flops                                            : 656
 # Shift Registers                                      : 53
  10-bit shift register                                 : 8
  2-bit shift register                                  : 8
@@ -806,24 +808,24 @@ Top Level Output File Name         : battle_city_battle_city_periph_0_wrapper.ng
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2093
+# BELS                             : 2103
 #      GND                         : 1
-#      INV                         : 10
-#      LUT1                        : 141
+#      INV                         : 9
+#      LUT1                        : 142
 #      LUT2                        : 133
-#      LUT3                        : 23
-#      LUT4                        : 820
-#      LUT5                        : 101
-#      LUT6                        : 159
+#      LUT3                        : 22
+#      LUT4                        : 818
+#      LUT5                        : 109
+#      LUT6                        : 161
 #      MUXCY                       : 419
-#      MUXF7                       : 37
+#      MUXF7                       : 40
 #      VCC                         : 1
 #      XORCY                       : 248
-# FlipFlops/Latches                : 707
+# FlipFlops/Latches                : 709
 #      FD                          : 141
 #      FDE                         : 545
 #      FDR                         : 2
-#      FDRE                        : 19
+#      FDRE                        : 21
 # RAMS                             : 16
 #      RAMB16BWER                  : 16
 # Shift Registers                  : 53
@@ -836,17 +838,17 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             707  out of  54576     1%  
- Number of Slice LUTs:                 1440  out of  27288     5%  
-    Number used as Logic:              1387  out of  27288     5%  
+ Number of Slice Registers:             709  out of  54576     1%  
+ Number of Slice LUTs:                 1447  out of  27288     5%  
+    Number used as Logic:              1394  out of  27288     5%  
     Number used as Memory:               53  out of   6408     0%  
        Number used as SRL:               53
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1517
-   Number with an unused Flip Flop:     810  out of   1517    53%  
-   Number with an unused LUT:            77  out of   1517     5%  
-   Number of fully used LUT-FF pairs:   630  out of   1517    41%  
+ Number of LUT Flip Flop pairs used:   1525
+   Number with an unused Flip Flop:     816  out of   1525    53%  
+   Number with an unused LUT:            78  out of   1525     5%  
+   Number of fully used LUT-FF pairs:   631  out of   1525    41%  
    Number of unique control sets:         8
 
 IO Utilization: 
@@ -878,7 +880,7 @@ Clock Information:
 -----------------------------------+-----------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                     | Load  |
 -----------------------------------+-----------------------------------------------------------+-------+
-S_AXI_ACLK                         | NONE(battle_city_periph_0/battle_city_i/sprt_int_col_r7_3)| 776   |
+S_AXI_ACLK                         | NONE(battle_city_periph_0/battle_city_i/sprt_int_col_r7_3)| 778   |
 -----------------------------------+-----------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -902,7 +904,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
   Clock period: 7.634ns (frequency: 130.997MHz)
-  Total number of paths / destination ports: 38864 / 1555
+  Total number of paths / destination ports: 38973 / 1559
 -------------------------------------------------------------------------
 Delay:               7.634ns (Levels of Logic = 15)
   Source:            battle_city_periph_0/battle_city_i/registers_s_7_24 (FF)
@@ -928,7 +930,7 @@ Delay:               7.634ns (Levels of Logic = 15)
      MUXCY:DI->O           1   0.181   0.000  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_cy<3> (battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_cy<3>)
      MUXCY:CI->O           1   0.235   0.790  battle_city_periph_0/battle_city_i/Mcompar_pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o_cy<4> (battle_city_periph_0/battle_city_i/pixel_row_i[8]_reg_end_row_s[7][8]_LessThan_124_o)
      LUT5:I3->O            6   0.250   1.306  battle_city_periph_0/battle_city_i/reg_intsect_s0<7>1 (battle_city_periph_0/battle_city_i/reg_intsect_s0<7>)
-     LUT5:I0->O            1   0.254   0.790  battle_city_periph_0/battle_city_i/reg_intersected_r1_1_rstpot_SW0 (N23)
+     LUT5:I0->O            1   0.254   0.790  battle_city_periph_0/battle_city_i/reg_intersected_r1_1_rstpot_SW0 (N26)
      LUT6:I4->O            1   0.250   0.000  battle_city_periph_0/battle_city_i/reg_intersected_r1_1_rstpot (battle_city_periph_0/battle_city_i/reg_intersected_r1_1_rstpot)
      FD:D                      0.074          battle_city_periph_0/battle_city_i/reg_intersected_r1_1
     ----------------------------------------
@@ -937,7 +939,7 @@ Delay:               7.634ns (Levels of Logic = 15)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 63581 / 1226
+  Total number of paths / destination ports: 63583 / 1228
 -------------------------------------------------------------------------
 Offset:              7.021ns (Levels of Logic = 3)
   Source:            S_AXI_AWADDR<18> (PAD)
@@ -1009,11 +1011,11 @@ S_AXI_ACLK     |    7.634|         |         |         |
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.67 secs
+Total CPU time to Xst completion: 12.06 secs
  
 --> 
 
-Total memory usage is 287352 kilobytes
+Total memory usage is 287032 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  225 (   0 filtered)

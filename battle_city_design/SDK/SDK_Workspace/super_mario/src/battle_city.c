@@ -42,10 +42,11 @@
 #define IMG_16x16_pr11			0x07BF
 #define IMG_16x16_sky			0x07FF
 #define IMG_16x16_white			0x083F
-
+#define IMG_16x16_wone			0x087F
+#define IMG_16x16_wzero			0x08BF
 
 // ***** MAP *****
-#define MAP_BASE_ADDRESS			2175 // MAP_OFFSET in battle_city.vhd
+#define MAP_BASE_ADDRESS			2303 // MAP_OFFSET in battle_city.vhd
 #define MAP_X							0
 #define MAP_X2							640
 #define MAP_Y							4
@@ -113,16 +114,28 @@ typedef struct {
 	unsigned int reg_h;
 } characters;
 
-characters cursor = { 300,						// x
-		200,						// y
+characters digit_one = { 600,						// x
+		50,						// y
 		DIR_LEFT,              		// dir
-		IMG_16x16_cursor,  		// type
+		IMG_16x16_wone,  		// type
 
 		b_false,                		// destroyed
 
 		TANK_AI_REG_L5,            		// reg_l
 		TANK_AI_REG_H5             		// reg_h
 		};
+
+characters digit_zero = { 600,						// x
+		50,						// y
+		DIR_LEFT,              		// dir
+		IMG_16x16_wzero,  		// type
+
+		b_false,                		// destroyed
+
+		TANK_AI_REG_L5,            		// reg_l
+		TANK_AI_REG_H5             		// reg_h
+		};
+
 
 characters duck1_right = { 160,	                        // x
 		131, 		                     // y
@@ -135,7 +148,7 @@ characters duck1_right = { 160,	                        // x
 		TANK1_REG_H             		// reg_h
 		};
 
-characters duck2_right = { 178,	                        // x
+characters duck2_right = { 176,	                        // x
 		131, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pr01,  			// type
@@ -157,7 +170,7 @@ characters duck3_right = { 160,	                        // x
 		TANK_AI_REG_H3             		// reg_h
 		};
 
-characters duck4_right = { 174,	                        // x
+characters duck4_right = { 176,	                        // x
 		147, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pr11,  			// type
@@ -168,7 +181,7 @@ characters duck4_right = { 174,	                        // x
 		TANK_AI_REG_H4             		// reg_h
 		};
 
-characters duck1_left = { 162,	                        // x
+characters duck1_left = { 160,	                        // x
 		131, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pl00,  			// type
@@ -190,7 +203,7 @@ characters duck2_left = { 176,	                        // x
 		TANK_AI_REG_H2             		// reg_h
 		};
 
-characters duck3_left = { 162,	                        // x
+characters duck3_left = { 160,	                        // x
 		147, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_pl10,  			// type
@@ -213,7 +226,7 @@ characters duck4_left = { 176,	                        // x
 		};
 
 
-characters duck1_white = { 162,	                        // x
+characters duck1_white = { 160,	                        // x
 		131, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_white,  			// type
@@ -235,7 +248,7 @@ characters duck2_white = { 176,	                        // x
 		TANK_AI_REG_H2             		// reg_h
 		};
 
-characters duck3_white = { 162,	                        // x
+characters duck3_white = { 160,	                        // x
 		147, 		                     // y
 		DIR_RIGHT,              		// dir
 		IMG_16x16_white,  			// type
@@ -466,7 +479,7 @@ int random_x() {
 }
 
 bool_t crash_detection() {
-	buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
+	/*buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
 	if (BTN_SHOOT(buttons)) {
 		if (cursor.x > duck1_left.x && cursor.x < (duck1_left.x + 16)
 				&& cursor.y > duck1_left.y && cursor.y < (duck1_left.y + 16)) {
@@ -475,7 +488,7 @@ bool_t crash_detection() {
 			return b_false;
 		}
 	}
-	return b_false;
+	return b_false;*/
 }
 
 void reset_duck() {
@@ -509,7 +522,6 @@ static void duck_move() {
 		count = 0;
 	}
 	count++;
-
 
 
 	if (direction == 0) {
@@ -559,8 +571,6 @@ static void duck_move() {
 			if (duck1_left.x < 10 || duck1_left.y < 10) {
 				return;
 			}
-
-
 
 	} else if (direction == 1) {
 			duck1_left.y -= 1;
@@ -920,8 +930,12 @@ void battle_city() {
 	//chhar_spawn(&cursor);
 	chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right, &duck4_right);
 
+	chhar_spawn(&digit_zero);
+
 	while (1) {
-		stoljpi();
+		if(!stoljpi()){
+			chhar_spawn(&digit_one);
+		}
 		map_update();
 	}
 }

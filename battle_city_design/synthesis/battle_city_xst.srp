@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to D:\Ra92-2016\duck_hunt\battle_city_design\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> 
@@ -996,6 +996,8 @@ Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block battle_city, actual ratio is 9.
 INFO:Xst:2260 - The FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <io_periph> is equivalent to the following FF/Latch : <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <battle_city_periph_0/vga_ctrl_i/pixel_y_4> in Unit <battle_city_periph_0> is equivalent to the following FF/Latch : <battle_city_periph_0/vga_ctrl_i/pixel_y_4_1> 
+INFO:Xst:2260 - The FF/Latch <battle_city_periph_0/vga_ctrl_i/pixel_y_6> in Unit <battle_city_periph_0> is equivalent to the following FF/Latch : <battle_city_periph_0/vga_ctrl_i/pixel_y_6_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi4lite_0> is equivalent to the following 3 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_3> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1> in Unit <axi4lite_0> is equivalent to the following 4 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_3> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_4> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 4 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_3> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_4> 
@@ -1006,6 +1008,8 @@ INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28_1> 
 INFO:Xst:2260 - The FF/Latch <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <io_periph> is equivalent to the following FF/Latch : <io_periph/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
+INFO:Xst:2260 - The FF/Latch <battle_city_periph_0/vga_ctrl_i/pixel_y_4> in Unit <battle_city_periph_0> is equivalent to the following FF/Latch : <battle_city_periph_0/vga_ctrl_i/pixel_y_4_1> 
+INFO:Xst:2260 - The FF/Latch <battle_city_periph_0/vga_ctrl_i/pixel_y_6> in Unit <battle_city_periph_0> is equivalent to the following FF/Latch : <battle_city_periph_0/vga_ctrl_i/pixel_y_6_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi4lite_0> is equivalent to the following 3 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_3> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1> in Unit <axi4lite_0> is equivalent to the following 4 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_3> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_4> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 4 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_3> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_4> 
@@ -1043,23 +1047,23 @@ Top Level Output File Name         : battle_city.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4410
+# BELS                             : 4420
 #      GND                         : 13
-#      INV                         : 41
-#      LUT1                        : 176
+#      INV                         : 40
+#      LUT1                        : 177
 #      LUT2                        : 281
-#      LUT3                        : 394
-#      LUT4                        : 1086
-#      LUT5                        : 402
-#      LUT6                        : 791
+#      LUT3                        : 393
+#      LUT4                        : 1084
+#      LUT5                        : 410
+#      LUT6                        : 793
 #      LUT6_2                      : 96
 #      MULT_AND                    : 2
 #      MUXCY                       : 449
 #      MUXCY_L                     : 155
-#      MUXF7                       : 158
+#      MUXF7                       : 161
 #      VCC                         : 8
 #      XORCY                       : 358
-# FlipFlops/Latches                : 2661
+# FlipFlops/Latches                : 2663
 #      FD                          : 339
 #      FDC                         : 34
 #      FDC_1                       : 5
@@ -1068,7 +1072,7 @@ Primitive and Black Box Usage:
 #      FDE_1                       : 8
 #      FDP                         : 5
 #      FDR                         : 650
-#      FDRE                        : 647
+#      FDRE                        : 649
 #      FDRE_1                      : 1
 #      FDS                         : 4
 #      FDSE                        : 45
@@ -1099,18 +1103,18 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2661  out of  54576     4%  
- Number of Slice LUTs:                 3506  out of  27288    12%  
-    Number used as Logic:              3267  out of  27288    11%  
+ Number of Slice Registers:            2663  out of  54576     4%  
+ Number of Slice LUTs:                 3513  out of  27288    12%  
+    Number used as Logic:              3274  out of  27288    11%  
     Number used as Memory:              239  out of   6408     3%  
        Number used as RAM:               64
        Number used as SRL:              175
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   5032
-   Number with an unused Flip Flop:    2371  out of   5032    47%  
-   Number with an unused LUT:          1526  out of   5032    30%  
-   Number of fully used LUT-FF pairs:  1135  out of   5032    22%  
+ Number of LUT Flip Flop pairs used:   5041
+   Number with an unused Flip Flop:    2378  out of   5041    47%  
+   Number with an unused LUT:          1528  out of   5041    30%  
+   Number of fully used LUT-FF pairs:  1135  out of   5041    22%  
    Number of unique control sets:       117
 
 IO Utilization: 
@@ -1145,7 +1149,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                             | Load  |
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
-CLK_P                              | PLL_ADV:CLKOUT0                                                                                                   | 2651  |
+CLK_P                              | PLL_ADV:CLKOUT0                                                                                                   | 2653  |
 debug_module/debug_module/drck_i   | BUFG                                                                                                              | 209   |
 debug_module/Ext_JTAG_UPDATE       | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
@@ -1171,7 +1175,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_P'
   Clock period: 22.636ns (frequency: 44.177MHz)
-  Total number of paths / destination ports: 607110 / 7682
+  Total number of paths / destination ports: 607221 / 7688
 -------------------------------------------------------------------------
 Delay:               11.318ns (Levels of Logic = 11)
   Source:            axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
@@ -1462,14 +1466,14 @@ debug_module/debug_module/drck_i|    2.860|    4.093|    3.740|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.98 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.57 secs
  
 --> 
 
-Total memory usage is 314488 kilobytes
+Total memory usage is 314552 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    6 (   0 filtered)
-Number of infos    :  865 (   0 filtered)
+Number of infos    :  869 (   0 filtered)
 

@@ -447,7 +447,7 @@ static void map_update_shot(){
 
 		chhar_spawn_duck(&duck1_white, &duck2_white,&duck3_white,&duck4_white);
 
-		for(i = 0; i < 100000; i++);
+		for(i = 0; i < 1000000; i++);
 }
 
 static void map_reset(unsigned char * map) {
@@ -906,7 +906,7 @@ bool stoljpi(){
 
 
 	   		if(!i_sig){
-	   			chhar_spawn(&digit_one);
+	   			printf("belo\n");
 	   		}
 
 	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
@@ -933,6 +933,9 @@ void battle_city() {
 	chhar_spawn(&digit_zero);
 
 	while (1) {
+		if(!stoljpi()){
+			chhar_spawn(&digit_one);
+		}
 		map_update();
 	}
 }

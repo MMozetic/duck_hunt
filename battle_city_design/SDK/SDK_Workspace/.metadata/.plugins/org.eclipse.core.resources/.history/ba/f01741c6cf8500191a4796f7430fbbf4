@@ -933,6 +933,9 @@ void battle_city() {
 	chhar_spawn(&digit_zero);
 
 	while (1) {
+		if(!stoljpi()){
+
+		}
 		map_update();
 	}
 }

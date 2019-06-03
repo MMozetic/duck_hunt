@@ -906,7 +906,7 @@ bool stoljpi(){
 
 
 	   		if(!i_sig){
-	   			chhar_spawn(&digit_one);
+	   			printf("belo\n");
 	   		}
 
 	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
@@ -933,6 +933,9 @@ void battle_city() {
 	chhar_spawn(&digit_zero);
 
 	while (1) {
+		if(!stoljpi()){
+			chhar_spawn(&digit_one);
+		}
 		map_update();
 	}
 }

@@ -244,8 +244,8 @@ characters duck2_white = { 176,	                        // x
 
 		b_false,                		// destroyed
 
-		TANK_AI_REG_L2,            		// reg_l
-		TANK_AI_REG_H2             		// reg_h
+		TANK_AI_REG_L6,            		// reg_l
+		TANK_AI_REG_H6             		// reg_h
 		};
 
 characters duck3_white = { 160,	                        // x
@@ -266,8 +266,8 @@ characters duck4_white = { 176,	                        // x
 
 		b_false,                		// destroyed
 
-		TANK_AI_REG_L4,            		// reg_l
-		TANK_AI_REG_H4             		// reg_h
+		TANK_AI_REG_L7,            		// reg_l
+		TANK_AI_REG_H7             		// reg_h
 		};
 
 
@@ -447,7 +447,7 @@ static void map_update_shot(){
 
 		chhar_spawn_duck(&duck1_white, &duck2_white,&duck3_white,&duck4_white);
 
-		for(i = 0; i < 100000; i++);
+		for(i = 0; i < 500000; i++);
 }
 
 static void map_reset(unsigned char * map) {
@@ -906,7 +906,7 @@ bool stoljpi(){
 
 
 	   		if(!i_sig){
-	   			chhar_spawn(&digit_one);
+	   			printf("belo\n");
 	   		}
 
 	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
@@ -933,6 +933,9 @@ void battle_city() {
 	chhar_spawn(&digit_zero);
 
 	while (1) {
+		if(!stoljpi()){
+			chhar_spawn(&digit_one);
+		}
 		map_update();
 	}
 }

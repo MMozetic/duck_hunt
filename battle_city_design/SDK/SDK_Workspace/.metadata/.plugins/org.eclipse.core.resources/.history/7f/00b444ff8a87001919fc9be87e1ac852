@@ -992,7 +992,8 @@ void battle_city() {
 	while (1) {
 		map_update();
 		stoljpi();
-		printScore();
+		printScore()l
+
 	}
 }
 

@@ -953,24 +953,24 @@ bool stoljpi(){
 
 void printScore(){
 	switch(score){
-		case 0:
-			chhar_spawn(&digit_zero);
-			break;
-		case 1:
-			chhar_spawn(&digit_one);
-			break;
-		case 2:
-			chhar_spawn(&digit_two);
-			break;
-		case 3:
-			chhar_spawn(&digit_three);
-			break;
-		case 4:
-			chhar_spawn(&digit_four);
-			break;
-		default:
-			break;
-	}
+				case 0:
+					chhar_spawn(&digit_zero);
+					break;
+				case 1:
+					chhar_spawn(&digit_one);
+					break;
+				case 2:
+					chhar_spawn(&digit_two);
+					break;
+				case 3:
+					chhar_spawn(&digit_three);
+					break;
+				case 4:
+					chhar_spawn(&digit_four);
+					break;
+				default:
+					break;
+			}
 }
 
 void battle_city() {
@@ -992,7 +992,8 @@ void battle_city() {
 	while (1) {
 		map_update();
 		stoljpi();
-		printScore();
+
+
 	}
 }
 

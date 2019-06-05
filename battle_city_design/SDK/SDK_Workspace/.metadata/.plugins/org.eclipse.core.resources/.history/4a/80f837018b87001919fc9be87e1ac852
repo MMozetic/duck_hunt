@@ -993,6 +993,7 @@ void battle_city() {
 		map_update();
 		stoljpi();
 		printScore();
+
 	}
 }
 

@@ -118,39 +118,6 @@ typedef struct {
 	unsigned int reg_h;
 } characters;
 
-characters digit_four = { 600,						// x
-		50,						// y
-		DIR_LEFT,              		// dir
-		IMG_16x16_four,  		// type
-
-		b_false,                		// destroyed
-
-		TANK_AI_REG_L5,            		// reg_l
-		TANK_AI_REG_H5             		// reg_h
-		};
-
-characters digit_three = { 600,						// x
-		50,						// y
-		DIR_LEFT,              		// dir
-		IMG_16x16_three,  		// type
-
-		b_false,                		// destroyed
-
-		TANK_AI_REG_L5,            		// reg_l
-		TANK_AI_REG_H5             		// reg_h
-		};
-
-characters digit_two = { 600,						// x
-		50,						// y
-		DIR_LEFT,              		// dir
-		IMG_16x16_two,  		// type
-
-		b_false,                		// destroyed
-
-		TANK_AI_REG_L5,            		// reg_l
-		TANK_AI_REG_H5             		// reg_h
-		};
-
 characters digit_one = { 600,						// x
 		50,						// y
 		DIR_LEFT,              		// dir
@@ -942,7 +909,7 @@ bool stoljpi(){
 
 
 	   		if(!i_sig){
-	   			score++;
+	   			chhar_spawn(&digit_one);
 	   		}
 
 	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
@@ -951,27 +918,6 @@ bool stoljpi(){
 	   		return i_sig;
 }
 
-void printScore(){
-	switch(score){
-		case 0:
-			chhar_spawn(&digit_zero);
-			break;
-		case 1:
-			chhar_spawn(&digit_one);
-			break;
-		case 2:
-			chhar_spawn(&digit_two);
-			break;
-		case 3:
-			chhar_spawn(&digit_three);
-			break;
-		case 4:
-			chhar_spawn(&digit_four);
-			break;
-		default:
-			break;
-	}
-}
 
 void battle_city() {
 
@@ -992,7 +938,6 @@ void battle_city() {
 	while (1) {
 		map_update();
 		stoljpi();
-		printScore();
 	}
 }
 

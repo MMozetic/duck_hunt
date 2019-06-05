@@ -30,7 +30,7 @@ NET my_peripheral_0_LED_Data_pin[4] LOC = "L23"  |  IOSTANDARD = "LVCMOS33";
 NET my_peripheral_0_LED_Data_pin[5] LOC = "K24"  |  IOSTANDARD = "LVCMOS33";
 NET my_peripheral_0_LED_Data_pin[6] LOC = "H24"  |  IOSTANDARD = "LVCMOS33";
 NET my_peripheral_0_LED_Data_pin[7] LOC = "D24"  |  IOSTANDARD = "LVCMOS33";
-
+	
 NET RS232_Uart_1_sin LOC = "A21"  |  IOSTANDARD = "LVCMOS33";
 NET RS232_Uart_1_sout LOC = "A20"  |  IOSTANDARD = "LVCMOS33";
 

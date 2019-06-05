@@ -1,1 +1,9 @@
-﻿  battle_mem.vcxproj -> D:\Ra92-2016\duck_hunt\bc_mem_packer\battle_mem\\battle_mem.exe
+﻿  bitmap.cpp
+  main.cpp
+  tools.cpp
+  Generating code
+  16 of 18 functions (88.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  battle_mem.vcxproj -> D:\duck_hunt\bc_mem_packer\battle_mem\\battle_mem.exe

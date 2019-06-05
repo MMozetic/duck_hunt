@@ -31,22 +31,26 @@
 #define IMG_16x16_bg51			0x04FF
 #define IMG_16x16_bg52			0x053F
 #define IMG_16x16_black			0x057F
-#define IMG_16x16_cursor		0x05BF
-#define IMG_16x16_pl00			0x05FF
-#define IMG_16x16_pl01			0x063F
-#define IMG_16x16_pl10			0x067F
-#define IMG_16x16_pl11			0x06BF
-#define IMG_16x16_pr00			0x06FF
-#define IMG_16x16_pr01			0x073F
-#define IMG_16x16_pr10			0x077F
-#define IMG_16x16_pr11			0x07BF
-#define IMG_16x16_sky			0x07FF
-#define IMG_16x16_white			0x083F
-#define IMG_16x16_wone			0x087F
-#define IMG_16x16_wzero			0x08BF
+#define IMG_16x16_cursor			0x05BF
+#define IMG_16x16_four			0x05FF
+#define IMG_16x16_one			0x063F
+#define IMG_16x16_pl00			0x067F
+#define IMG_16x16_pl01			0x06BF
+#define IMG_16x16_pl10			0x06FF
+#define IMG_16x16_pl11			0x073F
+#define IMG_16x16_pr00			0x077F
+#define IMG_16x16_pr01			0x07BF
+#define IMG_16x16_pr10			0x07FF
+#define IMG_16x16_pr11			0x083F
+#define IMG_16x16_sky			0x087F
+#define IMG_16x16_three			0x08BF
+#define IMG_16x16_two			0x08FF
+#define IMG_16x16_white			0x093F
+#define IMG_16x16_zero			0x097F
+
 
 // ***** MAP *****
-#define MAP_BASE_ADDRESS			2303 // MAP_OFFSET in battle_city.vhd
+#define MAP_BASE_ADDRESS			2495 // MAP_OFFSET in battle_city.vhd
 #define MAP_X							0
 #define MAP_X2							640
 #define MAP_Y							4
@@ -117,7 +121,7 @@ typedef struct {
 characters digit_one = { 600,						// x
 		50,						// y
 		DIR_LEFT,              		// dir
-		IMG_16x16_wone,  		// type
+		IMG_16x16_one,  		// type
 
 		b_false,                		// destroyed
 
@@ -128,7 +132,7 @@ characters digit_one = { 600,						// x
 characters digit_zero = { 600,						// x
 		50,						// y
 		DIR_LEFT,              		// dir
-		IMG_16x16_wzero,  		// type
+		IMG_16x16_zero,  		// type
 
 		b_false,                		// destroyed
 

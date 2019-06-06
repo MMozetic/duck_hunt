@@ -90,10 +90,18 @@
 #define BASE_REG_L						0
 #define BASE_REG_H	                    1
 
+int lives = 3;
 int score = 0;
+int mapPart = 1;
+int udario_glavom_skok = 0;
 int map_move = 0;
+unsigned int change = 0;
+int udario_u_blok = 0;
 int direction = 0;
+unsigned int buttons;
 
+int broj_promasaja = 0;
+unsigned int bool_promasaj = 0;
 
 typedef enum {
 	b_false, b_true
@@ -398,6 +406,23 @@ static void chhar_spawn_duck(characters *duck1, characters *duck2,
 			(duck4->y << 16) | duck4->x);
 }
 
+static void chhar_spawn_duck_move(characters *duck1, characters *duck2,
+		characters *duck3, characters *duck4) {
+
+	Xil_Out32(
+			XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + duck1->reg_h ),
+			(duck1->y << 16) | duck1->x);
+	Xil_Out32(
+			XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + duck2->reg_h ),
+			(duck2->y << 16) | duck2->x);
+	Xil_Out32(
+			XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + duck3->reg_h ),
+			(duck3->y << 16) | duck3->x);
+	Xil_Out32(
+			XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + duck4->reg_h ),
+			(duck4->y << 16) | duck4->x);
+}
+
 static void map_update() {
 	int x, y;
 	long int addr;
@@ -522,7 +547,7 @@ static void map_update_shot(){
 		for(i = 0; i < 100000; i++);
 }
 
-static void map_reset() {
+static void map_reset(unsigned char * map) {
 
 	unsigned int i;
 
@@ -550,6 +575,18 @@ int random_x() {
 	return rand() % 600;
 }
 
+bool_t crash_detection() {
+	/*buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
+	if (BTN_SHOOT(buttons)) {
+		if (cursor.x > duck1_left.x && cursor.x < (duck1_left.x + 16)
+				&& cursor.y > duck1_left.y && cursor.y < (duck1_left.y + 16)) {
+			return b_true;
+		} else {
+			return b_false;
+		}
+	}
+	return b_false;*/
+}
 
 void reset_duck() {
 	duck1_left.y = 320;
@@ -573,7 +610,7 @@ void reset_duck() {
 
 
 static void duck_move() {
-	int j;
+	int i, j;
 	static int count = 0;
 	static int framesNum = 5;
 	if(count == framesNum){
@@ -614,7 +651,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-
+			if (crash_detection() == b_true) {
+				//lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				//if (lives < 1) {
+				//	while (1)
+				//		;
+				//}
+				reset_duck();
+			}
 
 			for (j = 0; j < 100000; j++) {
 			}
@@ -639,7 +685,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-
+			if (crash_detection() == b_true) {
+				//lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				//if (lives < 1) {
+				//	while (1)
+				//		;
+				//}
+				reset_duck();
+			}
 			for (j = 0; j < 100000; j++) {
 			}
 			if (duck1_left.y < 10) {
@@ -678,7 +733,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
-
+			if (crash_detection() == b_true) {
+				lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				if (lives < 1) {
+					//while (1)
+						//;
+				}
+				reset_duck();
+			}
 			for (j = 0; j < 100000; j++) {
 			}
 			if (duck1_right.x > 600 || duck1_right.y < 10) {
@@ -703,7 +767,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-
+			if (crash_detection() == b_true) {
+				lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				if (lives < 1) {
+					//while (1)
+					//	;
+				}
+				reset_duck();
+			}
 			for (j = 0; j < 100000; j++) {
 			}
 			if (duck1_left.x < 10) {
@@ -728,7 +801,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
-
+			if (crash_detection() == b_true) {
+				lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				if (lives < 1) {
+					//while (1)
+					//	;
+				}
+				reset_duck();
+			}
 			for (j = 0; j < 100000; j++) {
 			}
 
@@ -766,7 +848,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-
+			if (crash_detection() == b_true) {
+				//lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				if (lives < 1) {
+					//while (1)
+					//	;
+				}
+				reset_duck();
+			}
 			for (j = 0; j < 100000; j++) {
 			}
 			if (duck1_right.x < 10 || duck1_right.y > 320) {
@@ -791,7 +882,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_left, &duck2_left, &duck3_left,
 					&duck4_left);
-
+			if (crash_detection() == b_true) {
+				//lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				if (lives < 1) {
+					//while (1)
+					//	;
+				}
+				reset_duck();
+			}
 			for (j = 0; j < 100000; j++) {
 			}
 			if (duck1_right.y > 320) {
@@ -829,7 +929,16 @@ static void duck_move() {
 
 			chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right,
 					&duck4_right);
-
+			if (crash_detection() == b_true) {
+				//lives--;
+				for (j = 0; j < 10000000; j++) {
+				}
+				//if (lives < 1) {
+				//	while (1)
+				//		;
+				//}
+				reset_duck();
+			}
 			for (j = 0; j < 100000; j++) {
 			}
 			if (duck1_right.x > 600 || duck1_right.y > 320) {
@@ -843,6 +952,7 @@ static void duck_move() {
 
 bool stoljpi(){
 			u32 output;
+			static int j=0;
 	    	//postavljanje o_pwr na 0 (citanje okidaca)
 
 	    	bool o_pwr = 0;
@@ -892,11 +1002,7 @@ bool stoljpi(){
 
 
 	   		if(!i_sig){
-	   			if(score == 10){
-	   				score = 0;
-	   			}else{
-	   				score++;
-	   			}
+	   			score = (score == 10)?0:++score;
 	   		}
 
 	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
@@ -944,7 +1050,12 @@ void printScore(){
 
 void battle_city() {
 
-	map_reset();
+	unsigned int buttons, tmpBtn = 0, tmpUp = 0;
+	int i, change = 0, jumpFlag = 0;
+	int block;
+	broj_promasaja = 0;
+
+	map_reset(map1);
 	map_update();
 
 	chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right, &duck4_right);

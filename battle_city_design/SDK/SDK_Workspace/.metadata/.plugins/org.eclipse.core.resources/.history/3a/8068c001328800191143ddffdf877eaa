@@ -398,6 +398,8 @@ static void chhar_spawn_duck(characters *duck1, characters *duck2,
 			(duck4->y << 16) | duck4->x);
 }
 
+
+
 static void map_update() {
 	int x, y;
 	long int addr;

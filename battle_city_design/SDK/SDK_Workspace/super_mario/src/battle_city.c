@@ -31,26 +31,31 @@
 #define IMG_16x16_bg51			0x04FF
 #define IMG_16x16_bg52			0x053F
 #define IMG_16x16_black			0x057F
-#define IMG_16x16_cursor			0x05BF
-#define IMG_16x16_four			0x05FF
-#define IMG_16x16_one			0x063F
-#define IMG_16x16_pl00			0x067F
-#define IMG_16x16_pl01			0x06BF
-#define IMG_16x16_pl10			0x06FF
-#define IMG_16x16_pl11			0x073F
-#define IMG_16x16_pr00			0x077F
-#define IMG_16x16_pr01			0x07BF
-#define IMG_16x16_pr10			0x07FF
-#define IMG_16x16_pr11			0x083F
-#define IMG_16x16_sky			0x087F
-#define IMG_16x16_three			0x08BF
-#define IMG_16x16_two			0x08FF
-#define IMG_16x16_white			0x093F
-#define IMG_16x16_zero			0x097F
+#define IMG_16x16_cursor		0x05BF
+#define IMG_16x16_eight			0x05FF
+#define IMG_16x16_five			0x063F
+#define IMG_16x16_four			0x067F
+#define IMG_16x16_nine			0x06BF
+#define IMG_16x16_one			0x06FF
+#define IMG_16x16_pl00			0x073F
+#define IMG_16x16_pl01			0x077F
+#define IMG_16x16_pl10			0x07BF
+#define IMG_16x16_pl11			0x07FF
+#define IMG_16x16_pr00			0x083F
+#define IMG_16x16_pr01			0x087F
+#define IMG_16x16_pr10			0x08BF
+#define IMG_16x16_pr11			0x08FF
+#define IMG_16x16_seven			0x093F
+#define IMG_16x16_six			0x097F
+#define IMG_16x16_sky			0x09BF
+#define IMG_16x16_three			0x09FF
+#define IMG_16x16_two			0x0A3F
+#define IMG_16x16_white			0x0A7F
+#define IMG_16x16_zero			0x0ABF
 
 
 // ***** MAP *****
-#define MAP_BASE_ADDRESS			2495 // MAP_OFFSET in battle_city.vhd
+#define MAP_BASE_ADDRESS				2815 // MAP_OFFSET in battle_city.vhd
 #define MAP_X							0
 #define MAP_X2							640
 #define MAP_Y							4
@@ -117,6 +122,61 @@ typedef struct {
 	unsigned int reg_l;
 	unsigned int reg_h;
 } characters;
+
+characters digit_nine = { 600,						// x
+		50,						// y
+		DIR_LEFT,              		// dir
+		IMG_16x16_nine,  		// type
+
+		b_false,                		// destroyed
+
+		TANK_AI_REG_L5,            		// reg_l
+		TANK_AI_REG_H5             		// reg_h
+		};
+
+characters digit_eight = { 600,						// x
+		50,						// y
+		DIR_LEFT,              		// dir
+		IMG_16x16_eight,  		// type
+
+		b_false,                		// destroyed
+
+		TANK_AI_REG_L5,            		// reg_l
+		TANK_AI_REG_H5             		// reg_h
+		};
+
+characters digit_seven = { 600,						// x
+		50,						// y
+		DIR_LEFT,              		// dir
+		IMG_16x16_seven,  		// type
+
+		b_false,                		// destroyed
+
+		TANK_AI_REG_L5,            		// reg_l
+		TANK_AI_REG_H5             		// reg_h
+		};
+
+characters digit_six = { 600,						// x
+		50,						// y
+		DIR_LEFT,              		// dir
+		IMG_16x16_six,  		// type
+
+		b_false,                		// destroyed
+
+		TANK_AI_REG_L5,            		// reg_l
+		TANK_AI_REG_H5             		// reg_h
+		};
+
+characters digit_five = { 600,						// x
+		50,						// y
+		DIR_LEFT,              		// dir
+		IMG_16x16_five,  		// type
+
+		b_false,                		// destroyed
+
+		TANK_AI_REG_L5,            		// reg_l
+		TANK_AI_REG_H5             		// reg_h
+		};
 
 characters digit_four = { 600,						// x
 		50,						// y
@@ -942,7 +1002,7 @@ bool stoljpi(){
 
 
 	   		if(!i_sig){
-	   			score++;
+	   			score = (score == 10)?0:++score;
 	   		}
 
 	   		output = (((u32)i_sig << 1) | ((u32)o_pwr));
@@ -968,6 +1028,21 @@ void printScore(){
 		case 4:
 			chhar_spawn(&digit_four);
 			break;
+		case 5:
+			chhar_spawn(&digit_five);
+			break;
+		case 6:
+			chhar_spawn(&digit_six);
+			break;
+		case 7:
+			chhar_spawn(&digit_seven);
+			break;
+		case 8:
+			chhar_spawn(&digit_eight);
+			break;
+		case 9:
+			chhar_spawn(&digit_nine);
+			break;
 		default:
 			break;
 	}
@@ -978,13 +1053,11 @@ void battle_city() {
 	unsigned int buttons, tmpBtn = 0, tmpUp = 0;
 	int i, change = 0, jumpFlag = 0;
 	int block;
-	//lives = 3;
 	broj_promasaja = 0;
 
 	map_reset(map1);
 	map_update();
 
-	//chhar_spawn(&cursor);
 	chhar_spawn_duck(&duck1_right, &duck2_right, &duck3_right, &duck4_right);
 
 	chhar_spawn(&digit_zero);
